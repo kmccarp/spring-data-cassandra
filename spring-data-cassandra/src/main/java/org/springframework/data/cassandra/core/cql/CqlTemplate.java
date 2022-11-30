@@ -542,13 +542,13 @@ public class CqlTemplate extends CassandraAccessor implements CqlOperations {
 	 *
 	 * @param task readable text describing the task being attempted
 	 * @param cql CQL query or update that caused the problem (may be {@literal null})
-	 * @param RuntimeException the offending {@code RuntimeException}.
+	 * @param runtimeException the offending {@code RuntimeException}.
 	 * @return the exception translation {@link Function}
 	 * @see CqlProvider
 	 */
 	protected DataAccessException translateException(String task, @Nullable String cql,
-			RuntimeException RuntimeException) {
-		return translate(task, cql, RuntimeException);
+			RuntimeException runtimeException) {
+		return translate(task, cql, runtimeException);
 	}
 
 	/**

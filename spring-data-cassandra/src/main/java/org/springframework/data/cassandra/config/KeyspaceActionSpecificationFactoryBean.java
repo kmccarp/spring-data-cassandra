@@ -51,9 +51,9 @@ public class KeyspaceActionSpecificationFactoryBean implements FactoryBean<Keysp
 
 	private int replicationFactor;
 
-	private boolean durableWrites = false;
+	private boolean durableWrites;
 
-	private boolean ifNotExists = false;
+	private boolean ifNotExists;
 
 	private @Nullable KeyspaceActions actions;
 

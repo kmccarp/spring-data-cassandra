@@ -31,7 +31,7 @@ import com.datastax.oss.driver.api.core.cql.Row;
 //@formatter:off
 public class ReactiveCqlTemplateExamples {
 
-	private ReactiveCqlTemplate reactiveCqlTemplate = null;
+	private ReactiveCqlTemplate reactiveCqlTemplate;
 
 	void examples() {
 		// tag::rowCount[]
@@ -126,7 +126,7 @@ public class ReactiveCqlTemplateExamples {
 
 	static class Actor {
 
-		void setFirstName(String first_name) {
+		void setFirstName(String firstName) {
 
 		}
 

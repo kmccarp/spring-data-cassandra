@@ -38,7 +38,7 @@ class DropTableCqlGeneratorUnitTests {
 	/**
 	 * Convenient base class that other test classes can use so as not to repeat the generics declarations.
 	 */
-	static abstract class DropTableTest
+	abstract static class DropTableTest
 			extends AbstractTableOperationCqlGeneratorTest<DropTableSpecification, DropTableCqlGenerator> {}
 
 	static class BasicTest extends DropTableTest {

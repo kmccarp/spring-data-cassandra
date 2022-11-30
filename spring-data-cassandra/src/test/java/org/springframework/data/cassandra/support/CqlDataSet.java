@@ -31,11 +31,11 @@ import com.datastax.oss.driver.shaded.guava.common.io.Resources;
  *
  * @author Mark Paluch
  */
-public class CqlDataSet {
+public final class CqlDataSet {
 
-	private URL location = null;
+	private URL location;
 
-	private String keyspaceName = null;
+	private String keyspaceName;
 
 	private CqlDataSet(URL location, String keyspaceName) {
 

@@ -130,7 +130,7 @@ class OptimisticLockingIntegrationTests extends AbstractKeyspaceCreatingIntegrat
 
 	@Data
 	@Wither
-	static class VersionedEntity {
+	static final class VersionedEntity {
 
 		@Id final long id;
 

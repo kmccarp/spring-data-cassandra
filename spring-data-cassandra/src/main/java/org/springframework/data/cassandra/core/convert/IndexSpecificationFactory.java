@@ -50,7 +50,7 @@ import org.springframework.util.StringUtils;
 @SuppressWarnings("unchecked")
 class IndexSpecificationFactory {
 
-	private final static Map<Class<? extends Annotation>, CreateIndexConfigurer<? super Annotation>> INDEX_CONFIGURERS;
+	private static final Map<Class<? extends Annotation>, CreateIndexConfigurer<? super Annotation>> INDEX_CONFIGURERS;
 
 	static {
 

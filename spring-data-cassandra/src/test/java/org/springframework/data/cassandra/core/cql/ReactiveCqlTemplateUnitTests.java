@@ -541,10 +541,7 @@ class ReactiveCqlTemplateUnitTests {
 
 		doTestStrings(reactiveCqlTemplate -> {
 
-			Flux<Row> flux = reactiveCqlTemplate.execute("SELECT * from USERS", (session, ps) -> {
-
-				return session.execute(ps.bind("A")).flatMapMany(ReactiveResultSet::rows);
-			});
+			Flux<Row> flux = reactiveCqlTemplate.execute("SELECT * from USERS", (session, ps) -> session.execute(ps.bind("A")).flatMapMany(ReactiveResultSet::rows));
 
 			flux.as(StepVerifier::create).expectNextCount(3).verifyComplete();
 		});

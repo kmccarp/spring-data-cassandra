@@ -115,7 +115,7 @@ public abstract class AbstractRoutingSessionFactory implements SessionFactory, I
 	 *          {@literal null}.
 	 */
 	public void setSessionFactoryLookup(@Nullable SessionFactoryLookup sessionFactoryLookup) {
-		this.sessionFactoryLookup = (sessionFactoryLookup != null ? sessionFactoryLookup : new MapSessionFactoryLookup());
+		this.sessionFactoryLookup = sessionFactoryLookup != null ? sessionFactoryLookup : new MapSessionFactoryLookup();
 	}
 
 	@Override

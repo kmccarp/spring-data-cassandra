@@ -104,6 +104,6 @@ public abstract class RowUtils {
 			return row.getObject(index);
 		}
 
-		return (row.isNull(index) ? null : value);
+		return row.isNull(index) ? null : value;
 	}
 }

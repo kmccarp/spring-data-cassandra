@@ -271,7 +271,7 @@ class EntityOperations {
 		}
 	}
 
-	private static class AdaptibleMappedEntity<T> extends MappedEntity<T> implements AdaptibleEntity<T> {
+	private static final class AdaptibleMappedEntity<T> extends MappedEntity<T> implements AdaptibleEntity<T> {
 
 		private final CassandraPersistentEntity<?> entity;
 		private final ConvertingPropertyAccessor<T> propertyAccessor;
@@ -299,17 +299,13 @@ class EntityOperations {
 		public StatementBuilder<Update> appendVersionCondition(StatementBuilder<Update> update,
 				Number currentVersionNumber) {
 
-			return update.bind((statement, factory) -> {
-				return statement.if_(Condition.column(getVersionColumnName()).isEqualTo(factory.create(currentVersionNumber)));
-			});
+			return update.bind((statement, factory) -> statement.if_(Condition.column(getVersionColumnName()).isEqualTo(factory.create(currentVersionNumber))));
 		}
 
 		@Override
 		public StatementBuilder<Delete> appendVersionCondition(StatementBuilder<Delete> delete) {
 
-			return delete.bind((statement, factory) -> {
-				return statement.if_(Condition.column(getVersionColumnName()).isEqualTo(factory.create(getVersion())));
-			});
+			return delete.bind((statement, factory) -> statement.if_(Condition.column(getVersionColumnName()).isEqualTo(factory.create(getVersion()))));
 		}
 
 		@Override

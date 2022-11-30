@@ -155,6 +155,6 @@ public @interface SASI {
 		/**
 		 * Normalize to uppercase.
 		 */
-		UPPERCASE;
+		UPPERCASE
 	}
 }

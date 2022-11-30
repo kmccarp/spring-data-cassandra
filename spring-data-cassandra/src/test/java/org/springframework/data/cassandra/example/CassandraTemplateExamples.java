@@ -28,7 +28,7 @@ import com.datastax.oss.driver.api.core.cql.SimpleStatement;
 // @formatter:off
 public class CassandraTemplateExamples {
 
-	private CassandraTemplate template = null;
+	private CassandraTemplate template;
 
 	void examples() {
 		// tag::preparedStatement[]

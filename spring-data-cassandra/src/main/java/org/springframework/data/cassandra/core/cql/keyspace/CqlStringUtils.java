@@ -27,7 +27,7 @@ public class CqlStringUtils {
 	 */
 	@Nullable
 	public static String escapeSingle(@Nullable Object thing) {
-		return (thing == null ? null : thing.toString().replace(SINGLE_QUOTE, DOUBLE_SINGLE_QUOTE));
+		return thing == null ? null : thing.toString().replace(SINGLE_QUOTE, DOUBLE_SINGLE_QUOTE);
 	}
 
 	/**
@@ -36,6 +36,6 @@ public class CqlStringUtils {
 	 */
 	@Nullable
 	public static String singleQuote(@Nullable Object thing) {
-		return (thing == null ? null : SINGLE_QUOTE.concat(thing.toString()).concat(SINGLE_QUOTE));
+		return thing == null ? null : SINGLE_QUOTE.concat(thing.toString()).concat(SINGLE_QUOTE);
 	}
 }

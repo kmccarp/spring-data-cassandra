@@ -186,7 +186,7 @@ class PreparedStatementDelegate {
 	 *
 	 * @param <T> the source type
 	 */
-	static class Source<T> {
+	static final class Source<T> {
 
 		private final Supplier<T> supplier;
 
@@ -235,7 +235,7 @@ class PreparedStatementDelegate {
 		 * @return a new filtered source instance
 		 */
 		public Source<T> whenHasText() {
-			return when((value) -> StringUtils.hasText(Objects.toString(value, null)));
+			return when(value -> StringUtils.hasText(Objects.toString(value, null)));
 		}
 
 		/**

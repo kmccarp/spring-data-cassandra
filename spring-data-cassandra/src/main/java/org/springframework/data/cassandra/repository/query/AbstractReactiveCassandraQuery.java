@@ -103,7 +103,7 @@ public abstract class AbstractReactiveCassandraQuery extends CassandraRepository
 		CassandraReturnedType returnedType = new CassandraReturnedType(resultProcessor.getReturnedType(),
 				getRequiredConverter(getReactiveCassandraOperations()).getCustomConversions());
 
-		return (returnedType.isProjecting() ? returnedType.getDomainType() : returnedType.getReturnedType());
+		return returnedType.isProjecting() ? returnedType.getDomainType() : returnedType.getReturnedType();
 	}
 
 	/**
@@ -135,8 +135,8 @@ public abstract class AbstractReactiveCassandraQuery extends CassandraRepository
 		} else if (getQueryMethod().isCollectionQuery()) {
 			return new CollectionExecution(getReactiveCassandraOperations());
 		} else if (isCountQuery()) {
-			return ((statement, type) -> new SingleEntityExecution(getReactiveCassandraOperations(), false).execute(statement,
-					Long.class));
+			return (statement, type) -> new SingleEntityExecution(getReactiveCassandraOperations(), false).execute(statement,
+					Long.class);
 		} else if (isExistsQuery()) {
 			return new ExistsExecution(getReactiveCassandraOperations());
 		} else if (isModifyingQuery()) {

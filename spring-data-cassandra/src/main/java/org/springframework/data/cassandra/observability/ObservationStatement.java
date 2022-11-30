@@ -77,7 +77,7 @@ final class ObservationStatement implements MethodInterceptor {
 	@Override
 	public Object invoke(@Nonnull MethodInvocation invocation) throws Throwable {
 
-		if (invocation.getMethod().getName().equals("getObservation")) {
+		if ("getObservation".equals(invocation.getMethod().getName())) {
 			return this.observation;
 		}
 

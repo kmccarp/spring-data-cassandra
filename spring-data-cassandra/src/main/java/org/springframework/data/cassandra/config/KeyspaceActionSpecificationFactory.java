@@ -174,12 +174,7 @@ class KeyspaceActionSpecificationFactory {
 		if (replicationStrategy == ReplicationStrategy.SIMPLE_STRATEGY && replicationFactor > 0) {
 			return true;
 		}
-
-		if (replicationStrategy == ReplicationStrategy.NETWORK_TOPOLOGY_STRATEGY && !replications.isEmpty()) {
-			return true;
-		}
-
-		return false;
+		return replicationStrategy == ReplicationStrategy.NETWORK_TOPOLOGY_STRATEGY && !replications.isEmpty();
 	}
 
 	/**
@@ -192,7 +187,7 @@ class KeyspaceActionSpecificationFactory {
 		return DropKeyspaceSpecification.dropKeyspace(name).ifExists(ifExists);
 	}
 
-	static class KeyspaceActionSpecificationFactoryBuilder {
+	static final class KeyspaceActionSpecificationFactoryBuilder {
 
 		private final CqlIdentifier name;
 
@@ -202,7 +197,7 @@ class KeyspaceActionSpecificationFactory {
 
 		private long replicationFactor;
 
-		private boolean durableWrites = false;
+		private boolean durableWrites;
 
 		private KeyspaceActionSpecificationFactoryBuilder(CqlIdentifier name) {
 			this.name = name;

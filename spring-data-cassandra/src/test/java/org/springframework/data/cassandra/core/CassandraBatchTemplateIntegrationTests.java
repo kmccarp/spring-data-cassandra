@@ -274,7 +274,7 @@ class CassandraBatchTemplateIntegrationTests extends AbstractKeyspaceCreatingInt
 		CassandraBatchOperations batchOperations = new CassandraBatchTemplate(template, BatchType.LOGGED);
 		batchOperations.insert(walter).execute();
 
-		assertThatIllegalStateException().isThrownBy(() -> batchOperations.execute());
+		assertThatIllegalStateException().isThrownBy(batchOperations::execute);
 	}
 
 	@Test // DATACASS-288

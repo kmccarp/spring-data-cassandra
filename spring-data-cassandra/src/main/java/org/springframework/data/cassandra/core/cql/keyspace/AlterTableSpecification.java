@@ -36,7 +36,7 @@ import com.datastax.oss.driver.api.core.type.DataType;
  * @see TableOptionsSpecification
  * @see org.springframework.data.cassandra.core.cql.generator.AlterTableCqlGenerator
  */
-public class AlterTableSpecification extends TableOptionsSpecification<AlterTableSpecification> {
+public final class AlterTableSpecification extends TableOptionsSpecification<AlterTableSpecification> {
 
 	/**
 	 * The list of column changes.

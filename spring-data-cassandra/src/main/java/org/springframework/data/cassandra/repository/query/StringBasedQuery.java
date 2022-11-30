@@ -280,7 +280,7 @@ class StringBasedQuery {
 				}
 			}
 
-			return (matcherMap.isEmpty() ? null : matcherMap.values().iterator().next());
+			return matcherMap.isEmpty() ? null : matcherMap.values().iterator().next();
 		}
 	}
 }

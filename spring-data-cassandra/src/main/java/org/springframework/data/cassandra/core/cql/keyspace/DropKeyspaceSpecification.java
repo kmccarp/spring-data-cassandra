@@ -25,7 +25,7 @@ import org.springframework.lang.Nullable;
  *
  * @author Mark Paluch
  */
-public class DropKeyspaceSpecification extends KeyspaceActionSpecification {
+public final class DropKeyspaceSpecification extends KeyspaceActionSpecification {
 
 	private boolean ifExists;
 

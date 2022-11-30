@@ -55,9 +55,9 @@ public class ResourceKeyspacePopulator implements KeyspacePopulator {
 
 	private String blockCommentEndDelimiter = ScriptUtils.DEFAULT_BLOCK_COMMENT_END_DELIMITER;
 
-	private boolean continueOnError = false;
+	private boolean continueOnError;
 
-	private boolean ignoreFailedDrops = false;
+	private boolean ignoreFailedDrops;
 
 	/**
 	 * Construct a new {@link ResourceKeyspacePopulator} with default settings.
@@ -139,7 +139,7 @@ public class ResourceKeyspacePopulator implements KeyspacePopulator {
 	 * @see #addScript(Resource)
 	 */
 	public void setCqlScriptEncoding(@Nullable String cqlScriptEncoding) {
-		this.cqlScriptEncoding = (StringUtils.hasText(cqlScriptEncoding) ? cqlScriptEncoding : null);
+		this.cqlScriptEncoding = StringUtils.hasText(cqlScriptEncoding) ? cqlScriptEncoding : null;
 	}
 
 	/**

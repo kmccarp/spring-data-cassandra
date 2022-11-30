@@ -379,6 +379,6 @@ public class ColumnTypeResolverUnitTests {
 	}
 
 	enum MyEnum {
-		INSTANCE;
+		INSTANCE
 	}
 }

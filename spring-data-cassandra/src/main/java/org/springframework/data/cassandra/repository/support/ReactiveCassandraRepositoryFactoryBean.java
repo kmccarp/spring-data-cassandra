@@ -39,7 +39,7 @@ import org.springframework.util.Assert;
 public class ReactiveCassandraRepositoryFactoryBean<T extends Repository<S, ID>, S, ID>
 		extends RepositoryFactoryBeanSupport<T, S, ID> {
 
-	private boolean mappingContextConfigured = false;
+	private boolean mappingContextConfigured;
 
 	private @Nullable ReactiveCassandraOperations operations;
 

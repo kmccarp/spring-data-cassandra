@@ -57,7 +57,7 @@ public class AlterKeyspaceCqlGeneratorUnitTests {
 	/**
 	 * Convenient base class that other test classes can use so as not to repeat the generics declarations.
 	 */
-	static abstract class AlterKeyspaceTest
+	abstract static class AlterKeyspaceTest
 			extends AbstractKeyspaceOperationCqlGeneratorTest<AlterKeyspaceSpecification, AlterKeyspaceCqlGenerator> {}
 
 	static class CompleteTest extends AlterKeyspaceTest {

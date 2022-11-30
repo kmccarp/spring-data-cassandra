@@ -72,7 +72,7 @@ public class RowMapperResultSetExtractor<T> implements ResultSetExtractor<List<T
 	@Override
 	public List<T> extractData(ResultSet resultSet) throws DriverException, DataAccessException {
 
-		List<T> results = (this.rowsExpected > 0 ? new ArrayList<>(this.rowsExpected) : new ArrayList<>());
+		List<T> results = this.rowsExpected > 0 ? new ArrayList<>(this.rowsExpected) : new ArrayList<>();
 
 		int rowNumber = 0;
 

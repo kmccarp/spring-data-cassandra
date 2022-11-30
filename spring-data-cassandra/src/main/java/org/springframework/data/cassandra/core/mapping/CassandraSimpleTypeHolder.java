@@ -47,7 +47,7 @@ import com.datastax.oss.driver.api.core.type.reflect.GenericType;
  * @author Mark Paluch
  * @author Antoine Toulme
  */
-public class CassandraSimpleTypeHolder extends SimpleTypeHolder {
+public final class CassandraSimpleTypeHolder extends SimpleTypeHolder {
 
 	/**
 	 * Set of Cassandra simple types.

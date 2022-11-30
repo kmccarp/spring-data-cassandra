@@ -39,7 +39,7 @@ import com.datastax.oss.driver.api.core.CqlIdentifier;
  * @author Sam Lightfoot
  * @since 2.2
  */
-public class DeleteOptions extends WriteOptions {
+public final class DeleteOptions extends WriteOptions {
 
 	private static final DeleteOptions EMPTY = new DeleteOptionsBuilder().build();
 
@@ -140,7 +140,7 @@ public class DeleteOptions extends WriteOptions {
 	 *
 	 * @author Mark Paluch
 	 */
-	public static class DeleteOptionsBuilder extends WriteOptionsBuilder {
+	public static final class DeleteOptionsBuilder extends WriteOptionsBuilder {
 
 		private boolean ifExists;
 

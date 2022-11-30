@@ -20,7 +20,7 @@ package org.springframework.data.cassandra.core.cql.keyspace;
  *
  * @author Mark Paluch
  */
-public class DataCenterReplication {
+public final class DataCenterReplication {
 
 	private final String dataCenter;
 

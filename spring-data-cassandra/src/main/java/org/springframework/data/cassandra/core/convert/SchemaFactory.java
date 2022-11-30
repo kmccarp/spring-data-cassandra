@@ -404,10 +404,12 @@ public class SchemaFactory {
 
 		@Override
 		public boolean equals(@Nullable Object o) {
-			if (this == o)
+			if (this == o) {
 				return true;
-			if (!(o instanceof com.datastax.oss.driver.api.core.type.UserDefinedType))
+			}
+			if (!(o instanceof com.datastax.oss.driver.api.core.type.UserDefinedType)) {
 				return false;
+			}
 			com.datastax.oss.driver.api.core.type.UserDefinedType that = (com.datastax.oss.driver.api.core.type.UserDefinedType) o;
 			return isFrozen() == that.isFrozen() && Objects.equals(getName(), that.getName());
 		}

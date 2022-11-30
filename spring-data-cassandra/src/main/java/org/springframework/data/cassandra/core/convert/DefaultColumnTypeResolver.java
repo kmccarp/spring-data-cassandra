@@ -280,9 +280,7 @@ class DefaultColumnTypeResolver implements ColumnTypeResolver {
 
 			TypeInformation<?> typeInformation = TypeInformation.of(value.getClass());
 
-			return getCustomWriteTarget(typeInformation).map(it -> {
-				return (ColumnType) createCassandraTypeDescriptor(tryResolve(it), typeInformation);
-			}).orElseGet(() -> {
+			return getCustomWriteTarget(typeInformation).map(it -> (ColumnType) createCassandraTypeDescriptor(tryResolve(it), typeInformation)).orElseGet(() -> {
 
 				if (typeInformation.getType().isEnum()) {
 					return ColumnType.create(String.class, DataTypes.TEXT);

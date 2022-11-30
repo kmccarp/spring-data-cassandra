@@ -227,7 +227,7 @@ public final class CqlIdentifier implements Comparable<CqlIdentifier>, Serializa
 
 		int comparison = ((Boolean) this.quoted).compareTo(identifier.quoted);
 
-		return (comparison != 0 ? comparison : this.identifier.compareTo(identifier.identifier));
+		return comparison != 0 ? comparison : this.identifier.compareTo(identifier.identifier);
 	}
 
 	/**
@@ -240,15 +240,18 @@ public final class CqlIdentifier implements Comparable<CqlIdentifier>, Serializa
 	@Override
 	public boolean equals(@Nullable Object o) {
 
-		if (this == o)
+		if (this == o) {
 			return true;
-		if (!(o instanceof CqlIdentifier))
+		}
+		if (!(o instanceof CqlIdentifier)) {
 			return false;
+		}
 
 		CqlIdentifier that = (CqlIdentifier) o;
 
-		if (quoted != that.quoted)
+		if (quoted != that.quoted) {
 			return false;
+		}
 		return identifier.equals(that.identifier);
 	}
 

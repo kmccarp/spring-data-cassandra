@@ -51,8 +51,8 @@ public class CassandraParametersParameterAccessor extends ParametersParameterAcc
 
 		CassandraType cassandraType = findCassandraType(index);
 
-		return (cassandraType != null ? CassandraSimpleTypeHolder.getDataTypeFor(cassandraType.type())
-				: CassandraSimpleTypeHolder.getDataTypeFor(getParameterType(index)));
+		return cassandraType != null ? CassandraSimpleTypeHolder.getDataTypeFor(cassandraType.type())
+				: CassandraSimpleTypeHolder.getDataTypeFor(getParameterType(index));
 	}
 
 	@Nullable
@@ -81,7 +81,7 @@ public class CassandraParametersParameterAccessor extends ParametersParameterAcc
 
 		int queryOptionsIndex = getParameters().getQueryOptionsIndex();
 
-		Object value = (queryOptionsIndex != -1 ? getValue(queryOptionsIndex) : null);
+		Object value = queryOptionsIndex != -1 ? getValue(queryOptionsIndex) : null;
 
 		return (QueryOptions) value;
 	}

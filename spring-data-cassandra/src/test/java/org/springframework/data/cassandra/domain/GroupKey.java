@@ -36,6 +36,8 @@ import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn;
 @NoArgsConstructor
 public class GroupKey implements Serializable {
 
+	private static final long serialVersionUID = 1;
+
 	@PrimaryKeyColumn(ordinal = 1, type = PrimaryKeyType.PARTITIONED) private String groupname;
 	@PrimaryKeyColumn(name = "hash_prefix", ordinal = 2, type = PrimaryKeyType.PARTITIONED) private String hashPrefix;
 	@PrimaryKeyColumn(ordinal = 3, type = PrimaryKeyType.CLUSTERED) private String username;

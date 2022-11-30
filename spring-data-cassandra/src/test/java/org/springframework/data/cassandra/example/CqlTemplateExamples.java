@@ -32,7 +32,7 @@ import com.datastax.oss.driver.api.core.cql.Row;
 //@formatter:off
 public class CqlTemplateExamples {
 
-	private CqlTemplate cqlTemplate = null;
+	private CqlTemplate cqlTemplate;
 
 	void examples() {
 		// tag::rowCount[]
@@ -138,7 +138,7 @@ public class CqlTemplateExamples {
 
 	static class Actor {
 
-		void setFirstName(String first_name) {
+		void setFirstName(String firstName) {
 
 		}
 

@@ -639,7 +639,7 @@ public class AsyncCqlTemplate extends CassandraAccessor implements AsyncCqlOpera
 		return translated == null ? e : translated;
 	}
 
-	private static class SimpleAsyncPreparedStatementCreator implements AsyncPreparedStatementCreator, CqlProvider {
+	private static final class SimpleAsyncPreparedStatementCreator implements AsyncPreparedStatementCreator, CqlProvider {
 
 		private final PersistenceExceptionTranslator exceptionTranslator;
 
@@ -681,7 +681,7 @@ public class AsyncCqlTemplate extends CassandraAccessor implements AsyncCqlOpera
 		}
 	}
 
-	private static class MappingListenableFutureAdapter<T, S>
+	private static final class MappingListenableFutureAdapter<T, S>
 			extends org.springframework.util.concurrent.ListenableFutureAdapter<T, S> {
 
 		private final Function<S, T> mapper;

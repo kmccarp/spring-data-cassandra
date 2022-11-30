@@ -38,7 +38,7 @@ public class DropIndexCqlGeneratorUnitTests {
 	/**
 	 * Convenient base class that other test classes can use so as not to repeat the generics declarations.
 	 */
-	static abstract class DropIndexTest
+	abstract static class DropIndexTest
 			extends AbstractIndexOperationCqlGeneratorTest<DropIndexSpecification, DropIndexCqlGenerator> {}
 
 	static class BasicTest extends DropIndexTest {

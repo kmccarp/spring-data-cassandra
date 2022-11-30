@@ -310,7 +310,7 @@ class ReactiveSelectOperationSupportIntegrationTests extends AbstractKeyspaceCre
 
 		result.collectList().as(StepVerifier::create)
 				.assertNext(actual ->
-			assertThat(actual).allMatch(it -> it instanceof Person)
+			assertThat(actual).allMatch(Person.class::isInstance)
 		).verifyComplete();
 	}
 

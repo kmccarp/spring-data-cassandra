@@ -35,7 +35,7 @@ import com.datastax.oss.driver.internal.core.type.DefaultUserDefinedType;
  *
  * @author Mark Paluch
  */
-public class UserDefinedTypeBuilder {
+public final class UserDefinedTypeBuilder {
 
 	private final CqlIdentifier typeName;
 	private Map<CqlIdentifier, DataType> fields = new LinkedHashMap<>();
@@ -58,13 +58,11 @@ public class UserDefinedTypeBuilder {
 	}
 
 	public UserDefinedType build() {
-
-		DefaultUserDefinedType type = new DefaultUserDefinedType(CqlIdentifier.fromCql("system"), this.typeName, false,
+		return new DefaultUserDefinedType(CqlIdentifier.fromCql("system"), this.typeName, false,
 				new ArrayList<>(fields.keySet()), new ArrayList<>(fields.values()));
-		return type;
 	}
 
-	private static class UserDefinedTypeWrapper implements UserDefinedType {
+	private static final class UserDefinedTypeWrapper implements UserDefinedType {
 		private final UserDefinedType delegate;
 
 		private UserDefinedTypeWrapper(UserDefinedType delegate) {

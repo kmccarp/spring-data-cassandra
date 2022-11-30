@@ -77,7 +77,7 @@ class SimpleCassandraRepositoryUnitTests {
 
 		CassandraPersistentEntity<?> entity = converter.getMappingContext().getRequiredPersistentEntity(SimplePerson.class);
 
-		repository = new SimpleCassandraRepository<Object, String>(new MappingCassandraEntityInformation(entity, converter),
+		repository = new SimpleCassandraRepository<>(new MappingCassandraEntityInformation(entity, converter),
 				cassandraOperations);
 
 		SimplePerson person = new SimplePerson();
@@ -98,7 +98,7 @@ class SimpleCassandraRepositoryUnitTests {
 		CassandraPersistentEntity<?> entity = converter.getMappingContext()
 				.getRequiredPersistentEntity(VersionedPerson.class);
 
-		repository = new SimpleCassandraRepository<Object, String>(new MappingCassandraEntityInformation(entity, converter),
+		repository = new SimpleCassandraRepository<>(new MappingCassandraEntityInformation(entity, converter),
 				cassandraOperations);
 
 		VersionedPerson versionedPerson = new VersionedPerson();
@@ -114,7 +114,7 @@ class SimpleCassandraRepositoryUnitTests {
 		CassandraPersistentEntity<?> entity = converter.getMappingContext()
 				.getRequiredPersistentEntity(VersionedPerson.class);
 
-		repository = new SimpleCassandraRepository<Object, String>(new MappingCassandraEntityInformation(entity, converter),
+		repository = new SimpleCassandraRepository<>(new MappingCassandraEntityInformation(entity, converter),
 				cassandraOperations);
 
 		VersionedPerson versionedPerson = new VersionedPerson();
@@ -131,7 +131,7 @@ class SimpleCassandraRepositoryUnitTests {
 
 		CassandraPersistentEntity<?> entity = converter.getMappingContext().getRequiredPersistentEntity(Person.class);
 
-		repository = new SimpleCassandraRepository<Object, String>(new MappingCassandraEntityInformation(entity, converter),
+		repository = new SimpleCassandraRepository<>(new MappingCassandraEntityInformation(entity, converter),
 				cassandraOperations);
 
 		Person person = new Person();
@@ -149,7 +149,7 @@ class SimpleCassandraRepositoryUnitTests {
 
 		CassandraPersistentEntity<?> entity = converter.getMappingContext().getRequiredPersistentEntity(Person.class);
 
-		repository = new SimpleCassandraRepository<Object, String>(new MappingCassandraEntityInformation(entity, converter),
+		repository = new SimpleCassandraRepository<>(new MappingCassandraEntityInformation(entity, converter),
 				cassandraOperations);
 
 		Person person = new Person();
@@ -170,7 +170,7 @@ class SimpleCassandraRepositoryUnitTests {
 
 		CassandraPersistentEntity<?> entity = converter.getMappingContext().getRequiredPersistentEntity(Person.class);
 
-		repository = new SimpleCassandraRepository<Object, String>(new MappingCassandraEntityInformation(entity, converter),
+		repository = new SimpleCassandraRepository<>(new MappingCassandraEntityInformation(entity, converter),
 				cassandraOperations);
 
 		Person person = new Person();
@@ -185,7 +185,7 @@ class SimpleCassandraRepositoryUnitTests {
 
 		CassandraPageRequest pageRequest = CassandraPageRequest.first(10, Direction.ASC, "foo");
 
-		repository = new SimpleCassandraRepository<Object, String>(
+		repository = new SimpleCassandraRepository<>(
 				new MappingCassandraEntityInformation(
 						converter.getMappingContext().getRequiredPersistentEntity(SimplePerson.class), converter),
 				cassandraOperations);

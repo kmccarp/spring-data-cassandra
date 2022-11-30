@@ -43,7 +43,7 @@ import org.w3c.dom.Element;
  */
 public class CassandraAuditingBeanDefinitionParser extends AbstractSingleBeanDefinitionParser {
 
-	private static boolean PROJECT_REACTOR_AVAILABLE = ClassUtils.isPresent("reactor.core.publisher.Mono",
+	private static boolean projectReactorAvailable = ClassUtils.isPresent("reactor.core.publisher.Mono",
 			CassandraAuditingRegistrar.class.getClassLoader());
 
 	@Override
@@ -81,7 +81,7 @@ public class CassandraAuditingBeanDefinitionParser extends AbstractSingleBeanDef
 				parserContext.extractSource(element));
 		builder.addConstructorArgValue(isNewAwareAuditingHandler);
 
-		if (PROJECT_REACTOR_AVAILABLE) {
+		if (projectReactorAvailable) {
 			registerReactiveAuditingEntityCallback(parserContext.getRegistry(), isNewAwareAuditingHandler,
 					parserContext.extractSource(element));
 		}

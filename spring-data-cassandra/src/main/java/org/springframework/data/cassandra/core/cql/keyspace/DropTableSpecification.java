@@ -23,9 +23,9 @@ import com.datastax.oss.driver.api.core.CqlIdentifier;
  * @author Matthew T. Adams
  * @author Mark Paluch
  */
-public class DropTableSpecification extends TableNameSpecification {
+public final class DropTableSpecification extends TableNameSpecification {
 
-	private boolean ifExists = false;
+	private boolean ifExists;
 
 	private DropTableSpecification(CqlIdentifier name) {
 		super(name);

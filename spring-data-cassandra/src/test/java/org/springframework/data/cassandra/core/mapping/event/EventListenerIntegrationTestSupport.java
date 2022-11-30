@@ -45,7 +45,7 @@ import com.datastax.oss.driver.api.core.cql.SimpleStatement;
 public abstract class EventListenerIntegrationTestSupport extends AbstractKeyspaceCreatingIntegrationTests {
 
 	private CaptureEventListener listener = new CaptureEventListener();
-	User firstUser = null;
+	User firstUser;
 
 	@BeforeEach
 	void setUp() {

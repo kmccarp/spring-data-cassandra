@@ -172,6 +172,8 @@ public class SchemaFactoryUnitTests {
 	@PrimaryKeyClass
 	private static class CompositePrimaryKeyClassWithProperties implements Serializable {
 
+		private static final long serialVersionUID = 1;
+
 		private String firstname;
 		private String lastname;
 
@@ -205,6 +207,8 @@ public class SchemaFactoryUnitTests {
 
 	@PrimaryKeyClass
 	static class PrimaryKeyWithOrderedClusteredColumns implements Serializable {
+
+		private static final long serialVersionUID = 1;
 
 		@PrimaryKeyColumn(ordinal = 0, type = PrimaryKeyType.PARTITIONED) String species;
 		@PrimaryKeyColumn(ordinal = 1, type = PrimaryKeyType.CLUSTERED, ordering = Ordering.ASCENDING) String breed;
@@ -554,13 +558,13 @@ public class SchemaFactoryUnitTests {
 	void columnsShouldMapToTuple() {
 
 		UserDefinedType mappedUdt = mock(UserDefinedType.class, "mappedudt");
-		UserDefinedType human_udt = mock(UserDefinedType.class, "human_udt");
+		UserDefinedType humanUdt = mock(UserDefinedType.class, "human_udt");
 
-		when(human_udt.copy(true)).thenReturn(human_udt);
+		when(humanUdt.copy(true)).thenReturn(humanUdt);
 		when(mappedUdt.copy(true)).thenReturn(mappedUdt);
 
 		when(mappedUdt.asCql(anyBoolean(), anyBoolean())).thenReturn("mappedudt");
-		when(human_udt.asCql(anyBoolean(), anyBoolean())).thenReturn("human_udt");
+		when(humanUdt.asCql(anyBoolean(), anyBoolean())).thenReturn("human_udt");
 
 		mappingContext.setUserTypeResolver(typeName -> {
 
@@ -568,8 +572,8 @@ public class SchemaFactoryUnitTests {
 				return mappedUdt;
 			}
 
-			if (typeName.toString().equals(human_udt.toString())) {
-				return human_udt;
+			if (typeName.toString().equals(humanUdt.toString())) {
+				return humanUdt;
 			}
 			return null;
 		});

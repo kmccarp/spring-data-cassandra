@@ -94,6 +94,8 @@ class CassandraPersistentEntityOrderPropertiesUnitTests {
 	@PrimaryKeyClass
 	private static class CompositePK implements Serializable {
 
+		private static final long serialVersionUID = 1;
+
 		@PrimaryKeyColumn(ordinal = 2, type = PrimaryKeyType.PARTITIONED) private String key0;
 
 		@PrimaryKeyColumn(ordinal = 0) private String key1;
@@ -112,28 +114,37 @@ class CassandraPersistentEntityOrderPropertiesUnitTests {
 
 		@Override
 		public boolean equals(@Nullable Object obj) {
-			if (this == obj)
+			if (this == obj) {
 				return true;
-			if (obj == null)
+			}
+			if (obj == null) {
 				return false;
-			if (getClass() != obj.getClass())
+			}
+			if (getClass() != obj.getClass()) {
 				return false;
+			}
 			CompositePK other = (CompositePK) obj;
 			if (key0 == null) {
-				if (other.key0 != null)
+				if (other.key0 != null) {
 					return false;
-			} else if (!key0.equals(other.key0))
+				}
+			} else if (!key0.equals(other.key0)) {
 				return false;
+			}
 			if (key1 == null) {
-				if (other.key1 != null)
+				if (other.key1 != null) {
 					return false;
-			} else if (!key1.equals(other.key1))
+				}
+			} else if (!key1.equals(other.key1)) {
 				return false;
+			}
 			if (key2 == null) {
-				if (other.key2 != null)
+				if (other.key2 != null) {
 					return false;
-			} else if (!key2.equals(other.key2))
+				}
+			} else if (!key2.equals(other.key2)) {
 				return false;
+			}
 			return true;
 		}
 

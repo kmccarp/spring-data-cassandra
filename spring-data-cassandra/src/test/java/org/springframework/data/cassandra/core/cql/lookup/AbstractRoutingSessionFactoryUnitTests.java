@@ -110,7 +110,7 @@ class AbstractRoutingSessionFactoryUnitTests {
 		sut.afterPropertiesSet();
 		sut.setLookupKey("unknown");
 
-		assertThatIllegalStateException().isThrownBy(() -> sut.getSession());
+		assertThatIllegalStateException().isThrownBy(sut::getSession);
 	}
 
 	@Test // DATACASS-330

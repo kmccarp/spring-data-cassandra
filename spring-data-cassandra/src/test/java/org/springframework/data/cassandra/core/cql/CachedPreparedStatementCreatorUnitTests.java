@@ -104,7 +104,7 @@ class CachedPreparedStatementCreatorUnitTests {
 	}
 
 	@SuppressWarnings("unused")
-	private static class CreatePreparedStatementIsThreadSafe extends MultithreadedTestCase {
+	private static final class CreatePreparedStatementIsThreadSafe extends MultithreadedTestCase {
 
 		final AtomicInteger atomicInteger = new AtomicInteger();
 		private final CachedPreparedStatementCreator preparedStatementCreator;
@@ -120,13 +120,13 @@ class CachedPreparedStatementCreatorUnitTests {
 				@Override
 				public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 
-					if (method.getName().equals("prepare") && args.length == 1) {
+					if ("prepare".equals(method.getName()) && args.length == 1) {
 						waitForTick(2);
 						atomicInteger.incrementAndGet();
 						return preparedStatement;
 					}
 
-					if (method.getName().equals("getKeyspace")) {
+					if ("getKeyspace".equals(method.getName())) {
 						return Optional.of(CqlIdentifier.fromCql("system"));
 					}
 
@@ -159,11 +159,11 @@ class CachedPreparedStatementCreatorUnitTests {
 		@Override
 		public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 
-			if (method.getName().equals("hashCode")) {
+			if ("hashCode".equals(method.getName())) {
 				return hashCode();
 			}
 
-			if (method.getName().equals("equals") && args.length == 1) {
+			if ("equals".equals(method.getName()) && args.length == 1) {
 				return equals(args[0]);
 			}
 

@@ -25,7 +25,7 @@ import com.datastax.oss.driver.api.core.CqlIdentifier;
  * @since 1.5
  * @see CqlIdentifier
  */
-public class CreateUserTypeSpecification extends UserTypeSpecification<CreateUserTypeSpecification> {
+public final class CreateUserTypeSpecification extends UserTypeSpecification<CreateUserTypeSpecification> {
 
 	private boolean ifNotExists;
 

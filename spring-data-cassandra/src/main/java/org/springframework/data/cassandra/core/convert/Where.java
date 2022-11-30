@@ -22,4 +22,5 @@ import com.datastax.oss.driver.api.core.CqlIdentifier;
 /**
  * @author Mark Paluch
  */
-public class Where extends LinkedHashMap<CqlIdentifier, Object> {}
+public class Where extends LinkedHashMap<CqlIdentifier, Object> {
+	private static final long serialVersionUID = 1;}

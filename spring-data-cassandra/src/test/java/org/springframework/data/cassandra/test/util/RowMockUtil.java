@@ -153,7 +153,7 @@ public class RowMockUtil {
 		return new Column(name, value, type);
 	}
 
-	public static class Column {
+	public static final class Column {
 
 		private final String name;
 		private final Object value;

@@ -202,6 +202,8 @@ public class CassandraMappingContextUnitTests {
 	@PrimaryKeyClass
 	private static class CompositePrimaryKeyClassWithProperties implements Serializable {
 
+		private static final long serialVersionUID = 1;
+
 		private String firstname;
 		private String lastname;
 
@@ -235,6 +237,8 @@ public class CassandraMappingContextUnitTests {
 
 	@PrimaryKeyClass
 	static class PrimaryKeyWithOrderedClusteredColumns implements Serializable {
+
+		private static final long serialVersionUID = 1;
 
 		@PrimaryKeyColumn(ordinal = 0, type = PrimaryKeyType.PARTITIONED) String species;
 		@PrimaryKeyColumn(ordinal = 1, type = PrimaryKeyType.CLUSTERED, ordering = Ordering.ASCENDING) String breed;

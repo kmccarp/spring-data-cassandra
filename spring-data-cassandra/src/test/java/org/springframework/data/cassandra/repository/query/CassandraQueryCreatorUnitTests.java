@@ -337,6 +337,8 @@ class CassandraQueryCreatorUnitTests {
 	@PrimaryKeyClass
 	private static class Key implements Serializable {
 
+		private static final long serialVersionUID = 1;
+
 		@PrimaryKeyColumn(type = PrimaryKeyType.PARTITIONED, ordinal = 1) String firstname;
 
 		@PrimaryKeyColumn(type = PrimaryKeyType.PARTITIONED, ordinal = 1) String lastname;
