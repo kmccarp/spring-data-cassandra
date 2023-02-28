@@ -23,7 +23,7 @@ import com.datastax.oss.driver.api.core.CqlIdentifier;
  * @author Matthew T. Adams
  * @author Mark Paluch
  */
-public class DropColumnSpecification extends ColumnChangeSpecification {
+public final class DropColumnSpecification extends ColumnChangeSpecification {
 
 	private DropColumnSpecification(CqlIdentifier name) {
 		super(name);

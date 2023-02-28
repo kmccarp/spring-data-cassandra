@@ -43,8 +43,8 @@ class CassandraBatchTemplateIntegrationTests extends AbstractKeyspaceCreatingInt
 
 	private CassandraTemplate template;
 
-	private Group walter = new Group(new GroupKey("users", "0x1", "walter"));
-	private Group mike = new Group(new GroupKey("users", "0x1", "mike"));
+	private final Group walter = new Group(new GroupKey("users", "0x1", "walter"));
+	private final Group mike = new Group(new GroupKey("users", "0x1", "mike"));
 
 	@BeforeEach
 	void setUp() throws Exception {
@@ -273,7 +273,7 @@ class CassandraBatchTemplateIntegrationTests extends AbstractKeyspaceCreatingInt
 		CassandraBatchOperations batchOperations = new CassandraBatchTemplate(template, BatchType.LOGGED);
 		batchOperations.insert(walter).execute();
 
-		assertThatIllegalStateException().isThrownBy(() -> batchOperations.execute());
+		assertThatIllegalStateException().isThrownBy(batchOperations::execute);
 	}
 
 	@Test // DATACASS-288

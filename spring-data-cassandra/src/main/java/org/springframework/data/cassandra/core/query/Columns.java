@@ -43,7 +43,7 @@ import com.datastax.oss.driver.api.core.CqlIdentifier;
  * @see ColumnSelector
  * @since 2.0
  */
-public class Columns implements Iterable<ColumnName> {
+public final class Columns implements Iterable<ColumnName> {
 
 	private final Map<ColumnName, Selector> columns;
 

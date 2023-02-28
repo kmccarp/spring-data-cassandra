@@ -94,7 +94,10 @@ public class SimpleCassandraRepositoryIntegrationTests extends IntegrationTestsS
 	private ClassLoader classLoader;
 	private UserRepostitory repository;
 
-	private User dave, oliver, carter, boyd;
+	private User dave;
+	private User oliver;
+	private User carter;
+	private User boyd;
 
 	@Override
 	public void setBeanClassLoader(ClassLoader classLoader) {
@@ -158,9 +161,9 @@ public class SimpleCassandraRepositoryIntegrationTests extends IntegrationTestsS
 	@Test // DATACASS-396
 	void findByIdShouldReturnObject() {
 
-		Optional<User> User = repository.findById(dave.getId());
+		Optional<User> user = repository.findById(dave.getId());
 
-		assertThat(User).contains(dave);
+		assertThat(user).contains(dave);
 	}
 
 	@Test // DATACASS-396

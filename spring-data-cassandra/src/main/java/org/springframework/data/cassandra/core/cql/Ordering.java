@@ -33,7 +33,7 @@ public enum Ordering {
 	 */
 	DESCENDING("DESC");
 
-	private String cql;
+	private final String cql;
 
 	Ordering(String cql) {
 		this.cql = cql;
