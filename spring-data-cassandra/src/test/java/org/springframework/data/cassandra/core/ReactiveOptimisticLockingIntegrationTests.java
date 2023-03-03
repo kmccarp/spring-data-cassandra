@@ -151,7 +151,7 @@ class ReactiveOptimisticLockingIntegrationTests extends AbstractKeyspaceCreating
 
 	@Data
 	@Wither
-	static class VersionedEntity {
+	static final class VersionedEntity {
 
 		@Id final long id;
 

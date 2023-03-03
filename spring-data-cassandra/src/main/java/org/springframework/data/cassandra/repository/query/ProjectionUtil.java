@@ -32,7 +32,7 @@ import com.datastax.oss.driver.api.core.type.DataTypes;
  */
 abstract class ProjectionUtil {
 
-	private final static Set<DataType> NUMERIC_TYPES = new HashSet<>(Arrays.asList(DataTypes.BIGINT, DataTypes.VARINT,
+	private static final Set<DataType> NUMERIC_TYPES = new HashSet<>(Arrays.asList(DataTypes.BIGINT, DataTypes.VARINT,
 			DataTypes.SMALLINT, DataTypes.INT, DataTypes.COUNTER, DataTypes.TINYINT));
 
 	private ProjectionUtil() {}

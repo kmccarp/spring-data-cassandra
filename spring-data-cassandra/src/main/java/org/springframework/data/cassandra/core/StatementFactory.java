@@ -654,13 +654,11 @@ public class StatementFactory {
 
 		StatementBuilder<Select> builder = StatementBuilder.of(select);
 
-		builder.bind((statement, factory) -> {
-			return statement.where(getRelations(filter, factory));
-		});
+		builder.bind((statement, factory) -> statement.where(getRelations(filter, factory)));
 
 		if (sort.isSorted()) {
 
-			builder.apply((statement) -> {
+			builder.apply(statement -> {
 
 				Select statementToUse = statement;
 
@@ -721,9 +719,7 @@ public class StatementFactory {
 					return (com.datastax.oss.driver.api.querybuilder.update.Update) ((OngoingAssignment) statement)
 							.set(assignments);
 
-				}).bind((statement, factory) -> {
-					return statement.where(getRelations(filter, factory));
-				});
+				}).bind((statement, factory) -> statement.where(getRelations(filter, factory)));
 	}
 
 	static Iterable<Relation> toRelations(Where where, TermFactory factory) {
@@ -860,9 +856,7 @@ public class StatementFactory {
 			select = select.column(columnName);
 		}
 
-		return StatementBuilder.of(select.where()).bind((statement, factory) -> {
-			return statement.where(getRelations(filter, factory));
-		});
+		return StatementBuilder.of(select.where()).bind((statement, factory) -> statement.where(getRelations(filter, factory)));
 	}
 
 	/**

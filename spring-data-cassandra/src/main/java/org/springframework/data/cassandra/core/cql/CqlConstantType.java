@@ -24,7 +24,7 @@ public enum CqlConstantType {
 	STRING(STRING_PATTERN), INTEGER(INTEGER_PATTERN), FLOAT(FLOAT_PATTERN), BOOLEAN(BOOLEAN_PATTERN), UUID(
 			UUID_PATTERN), BLOB(BLOB_PATTERN);
 
-	private Pattern pattern;
+	private final Pattern pattern;
 
 	CqlConstantType(Pattern pattern) {
 		this.pattern = pattern;

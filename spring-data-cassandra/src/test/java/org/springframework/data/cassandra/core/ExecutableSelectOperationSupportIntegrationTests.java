@@ -306,7 +306,7 @@ class ExecutableSelectOperationSupportIntegrationTests extends AbstractKeyspaceC
 
 	@Test // DATACASS-485
 	void returnsTargetObjectDirectlyIfProjectionInterfaceIsImplemented() {
-		assertThat(this.template.query(Person.class).as(Contact.class).all()).allMatch(it -> it instanceof Person);
+		assertThat(this.template.query(Person.class).as(Contact.class).all()).allMatch(Person.class::isInstance);
 	}
 
 	private static Query queryLuke() {

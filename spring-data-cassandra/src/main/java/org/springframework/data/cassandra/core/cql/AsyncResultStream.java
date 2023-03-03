@@ -34,7 +34,7 @@ import com.datastax.oss.driver.api.core.cql.Row;
  * @author Mark Paluch
  * @since 3.0
  */
-class AsyncResultStream<T> {
+final class AsyncResultStream<T> {
 
 	private final AsyncResultSet resultSet;
 
@@ -177,7 +177,7 @@ class AsyncResultStream<T> {
 	class CollectState<A, R> {
 
 		private final AtomicInteger rowNumber = new AtomicInteger();
-		private volatile A intermediate;
+		private final volatile A intermediate;
 		private final Collector<? super T, A, R> collector;
 
 		CollectState(Collector<? super T, A, R> collector) {

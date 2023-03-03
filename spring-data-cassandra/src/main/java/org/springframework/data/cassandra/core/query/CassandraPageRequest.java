@@ -37,7 +37,9 @@ import org.springframework.util.Assert;
  * @author Mark Paluch
  * @since 2.0
  */
-public class CassandraPageRequest extends PageRequest {
+public final class CassandraPageRequest extends PageRequest {
+
+	private static final long serialVersionUID = 1;
 
 	private final @Nullable ByteBuffer pagingState;
 
@@ -192,7 +194,7 @@ public class CassandraPageRequest extends PageRequest {
 	 * @return {@literal true } if there's a next {@link Pageable} we can access from the current one.
 	 */
 	public boolean hasNext() {
-		return (getPagingState() != null && this.nextAllowed);
+		return getPagingState() != null && this.nextAllowed;
 	}
 
 	@Override
@@ -244,7 +246,7 @@ public class CassandraPageRequest extends PageRequest {
 			return false;
 		}
 
-		return (pagingState != null ? pagingState.equals(that.pagingState) : that.pagingState == null);
+		return pagingState != null ? pagingState.equals(that.pagingState) : that.pagingState == null;
 	}
 
 	@Override

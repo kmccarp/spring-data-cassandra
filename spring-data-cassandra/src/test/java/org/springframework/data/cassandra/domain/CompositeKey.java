@@ -34,6 +34,8 @@ import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn;
 @NoArgsConstructor
 public class CompositeKey implements Serializable {
 
+	private static final long serialVersionUID = 1;
+
 	@PrimaryKeyColumn(type = PrimaryKeyType.PARTITIONED, ordinal = 1, name = "first_name") private String firstname;
 	@PrimaryKeyColumn(type = PrimaryKeyType.PARTITIONED, ordinal = 2) private String lastname;
 }

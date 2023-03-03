@@ -26,7 +26,7 @@ import org.springframework.util.Assert;
  */
 public abstract class TableNameCqlGenerator<T extends TableNameSpecification> {
 
-	private TableNameSpecification specification;
+	private final TableNameSpecification specification;
 
 	public TableNameCqlGenerator(TableNameSpecification specification) {
 
