@@ -79,10 +79,10 @@ public class BeanPropertyRowMapper<T> implements RowMapper<T> {
 	private @Nullable Class<T> mappedClass;
 
 	/** Whether we're strictly validating. */
-	private boolean checkFullyPopulated = false;
+	private boolean checkFullyPopulated;
 
 	/** Whether we're defaulting primitives when mapping a null value. */
-	private boolean primitivesDefaultedForNullValue = false;
+	private boolean primitivesDefaultedForNullValue;
 
 	/** ConversionService for binding values to bean properties. */
 	private @Nullable ConversionService conversionService;
@@ -277,12 +277,12 @@ public class BeanPropertyRowMapper<T> implements RowMapper<T> {
 		T mappedObject = constructMappedInstance(row, bw);
 		bw.setBeanInstance(mappedObject);
 		int columnCount = row.getColumnDefinitions().size();
-		Set<String> populatedProperties = (isCheckFullyPopulated() ? new HashSet<>() : null);
+		Set<String> populatedProperties = isCheckFullyPopulated() ? new HashSet<>() : null;
 
 		for (int index = 0; index < columnCount; index++) {
 			String column = row.getColumnDefinitions().get(index).getName().toString();
 			String field = lowerCaseName(StringUtils.delete(column, " "));
-			PropertyDescriptor pd = (this.mappedFields != null ? this.mappedFields.get(field) : null);
+			PropertyDescriptor pd = this.mappedFields != null ? this.mappedFields.get(field) : null;
 			if (pd != null) {
 				try {
 					Object value = getColumnValue(row, index, pd);

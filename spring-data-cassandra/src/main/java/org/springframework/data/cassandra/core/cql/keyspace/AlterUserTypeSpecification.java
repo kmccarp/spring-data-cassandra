@@ -30,7 +30,7 @@ import com.datastax.oss.driver.api.core.type.DataType;
  * @since 1.5
  * @see CqlIdentifier
  */
-public class AlterUserTypeSpecification extends UserTypeNameSpecification {
+public final class AlterUserTypeSpecification extends UserTypeNameSpecification {
 
 	private final List<ColumnChangeSpecification> changes = new ArrayList<>();
 

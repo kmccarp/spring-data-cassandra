@@ -94,7 +94,7 @@ public class CachedPreparedStatementCreator implements PreparedStatementCreator 
 				if (CACHE.containsKey(session)) {
 					sessionMap = CACHE.get(session);
 				} else {
-					sessionMap = new ConcurrentHashMap<String, PreparedStatement>();
+					sessionMap = new ConcurrentHashMap<>();
 					CACHE.put(session, sessionMap);
 				}
 			}

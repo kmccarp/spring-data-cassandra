@@ -25,7 +25,7 @@ import com.datastax.oss.driver.api.core.type.DataType;
  * @author Mark Paluch
  * @see CqlIdentifier
  */
-public class AlterColumnSpecification extends ColumnTypeChangeSpecification {
+public final class AlterColumnSpecification extends ColumnTypeChangeSpecification {
 
 	private AlterColumnSpecification(CqlIdentifier name, DataType type) {
 		super(name, type);

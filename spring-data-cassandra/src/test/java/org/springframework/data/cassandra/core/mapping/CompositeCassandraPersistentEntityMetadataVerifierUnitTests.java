@@ -32,8 +32,8 @@ import org.springframework.data.mapping.MappingException;
  */
 class CompositeCassandraPersistentEntityMetadataVerifierUnitTests {
 
-	private CompositeCassandraPersistentEntityMetadataVerifier verifier = new CompositeCassandraPersistentEntityMetadataVerifier();
-	private CassandraMappingContext context = new CassandraMappingContext();
+	private final CompositeCassandraPersistentEntityMetadataVerifier verifier = new CompositeCassandraPersistentEntityMetadataVerifier();
+	private final CassandraMappingContext context = new CassandraMappingContext();
 
 	@BeforeEach
 	void setUp() throws Exception {

@@ -50,8 +50,8 @@ import com.datastax.oss.driver.api.core.type.codec.registry.CodecRegistry;
  */
 public class ColumnTypeResolverUnitTests {
 
-	private CassandraMappingContext mappingContext = new CassandraMappingContext();
-	private ColumnTypeResolver resolver = new DefaultColumnTypeResolver(mappingContext,
+	private final CassandraMappingContext mappingContext = new CassandraMappingContext();
+	private final ColumnTypeResolver resolver = new DefaultColumnTypeResolver(mappingContext,
 			SchemaFactory.ShallowUserTypeResolver.INSTANCE, () -> CodecRegistry.DEFAULT,
 			mappingContext::getCustomConversions);
 
@@ -378,6 +378,6 @@ public class ColumnTypeResolverUnitTests {
 	}
 
 	enum MyEnum {
-		INSTANCE;
+		INSTANCE
 	}
 }
