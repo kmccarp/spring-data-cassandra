@@ -78,7 +78,7 @@ public enum TableOption implements Option {
 	 */
 	GC_GRACE_SECONDS("gc_grace_seconds", Long.class, true, false, false);
 
-	private Option delegate;
+	private final Option delegate;
 
 	TableOption(String name, Class<?> type, boolean requiresValue, boolean escapesValue, boolean quotesValue) {
 		this.delegate = new DefaultOption(name, type, requiresValue, escapesValue, quotesValue);
@@ -144,7 +144,7 @@ public enum TableOption implements Option {
 
 		ALL("all"), NONE("none");
 
-		private String value;
+		private final String value;
 
 		KeyCachingOption(String value) {
 			this.value = value;
@@ -173,7 +173,7 @@ public enum TableOption implements Option {
 
 		ROWS_PER_PARTITION("rows_per_partition", String.class, true, false, true);
 
-		private Option delegate;
+		private final Option delegate;
 
 		CachingOption(String name, Class<?> type, boolean requiresValue, boolean escapesValue, boolean quotesValue) {
 			this.delegate = new DefaultOption(name, type, requiresValue, escapesValue, quotesValue);
@@ -275,7 +275,7 @@ public enum TableOption implements Option {
 		 */
 		SSTABLE_SIZE_IN_MB("sstable_size_in_mb", Long.class, true, false, false);
 
-		private Option delegate;
+		private final Option delegate;
 
 		CompactionOption(String name, Class<?> type, boolean requiresValue, boolean escapesValue, boolean quotesValue) {
 			this.delegate = new DefaultOption(name, type, requiresValue, escapesValue, quotesValue);
@@ -352,7 +352,7 @@ public enum TableOption implements Option {
 		 */
 		CRC_CHECK_CHANCE("crc_check_chance", Double.class, true, false, false);
 
-		private Option delegate;
+		private final Option delegate;
 
 		CompressionOption(String name, Class<?> type, boolean requiresValue, boolean escapesValue, boolean quotesValue) {
 			this.delegate = new DefaultOption(name, type, requiresValue, escapesValue, quotesValue);

@@ -84,7 +84,10 @@ public class SimpleReactiveCassandraRepositoryIntegrationTests extends Integrati
 	private ReactiveCassandraRepositoryFactory factory;
 	private UserRepostitory repository;
 
-	private User dave, oliver, carter, boyd;
+	private User dave;
+	private User oliver;
+	private User carter;
+	private User boyd;
 
 	@Override
 	public void setBeanClassLoader(ClassLoader classLoader) {

@@ -30,7 +30,7 @@ import com.datastax.oss.driver.api.core.CqlIdentifier;
  */
 class SnakeCaseNamingStrategyUnitTests {
 
-	private CassandraMappingContext context = new CassandraMappingContext();
+	private final CassandraMappingContext context = new CassandraMappingContext();
 
 	@BeforeEach
 	void before() {

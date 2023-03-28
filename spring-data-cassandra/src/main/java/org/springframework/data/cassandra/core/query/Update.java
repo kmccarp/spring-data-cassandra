@@ -42,7 +42,7 @@ import com.datastax.oss.driver.api.core.CqlIdentifier;
  * @author Chema Vinacua
  * @since 2.0
  */
-public class Update {
+public final class Update {
 
 	private static final Update EMPTY = new Update(Collections.emptyMap());
 

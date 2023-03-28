@@ -36,7 +36,7 @@ import com.datastax.oss.driver.api.core.CqlIdentifier;
  */
 class KeyspaceActionSpecificationFactoryBeanUnitTests {
 
-	private KeyspaceActionSpecificationFactoryBean bean = new KeyspaceActionSpecificationFactoryBean();
+	private final KeyspaceActionSpecificationFactoryBean bean = new KeyspaceActionSpecificationFactoryBean();
 
 	@Test // DATACASS-502
 	void shouldCreateKeyspace() {

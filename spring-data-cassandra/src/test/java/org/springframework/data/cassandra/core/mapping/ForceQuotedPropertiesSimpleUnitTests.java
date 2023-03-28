@@ -37,7 +37,7 @@ class ForceQuotedPropertiesSimpleUnitTests {
 	private static final String EXPLICIT_KEY_0 = "TheFirstKeyField";
 	private static final String EXPLICIT_KEY_1 = "TheSecondKeyField";
 
-	private CassandraMappingContext context = new CassandraMappingContext();
+	private final CassandraMappingContext context = new CassandraMappingContext();
 
 	@Test
 	void testImplicit() {

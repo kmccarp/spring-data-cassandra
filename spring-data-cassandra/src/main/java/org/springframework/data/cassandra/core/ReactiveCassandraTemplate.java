@@ -631,10 +631,8 @@ public class ReactiveCassandraTemplate
 		CassandraPersistentEntity<?> persistentEntity = getRequiredPersistentEntity(entity.getClass());
 		CqlIdentifier tableName = persistentEntity.getTableName();
 
-		return maybeCallBeforeConvert(entity, tableName).flatMap(entityToUpdate -> {
-			return source.isVersionedEntity() ? doUpdateVersioned(entity, options, tableName, persistentEntity)
-					: doUpdate(entity, options, tableName, persistentEntity);
-		});
+		return maybeCallBeforeConvert(entity, tableName).flatMap(entityToUpdate -> source.isVersionedEntity() ? doUpdateVersioned(entity, options, tableName, persistentEntity)
+					: doUpdate(entity, options, tableName, persistentEntity));
 	}
 
 	private <T> Mono<EntityWriteResult<T>> doUpdateVersioned(T entity, UpdateOptions options, CqlIdentifier tableName,

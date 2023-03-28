@@ -56,7 +56,7 @@ class CassandraMappingContextParser extends AbstractSingleBeanDefinitionParser {
 
 		String id = super.resolveId(element, definition, parserContext);
 
-		return (StringUtils.hasText(id) ? id : DefaultBeanNames.CONTEXT);
+		return StringUtils.hasText(id) ? id : DefaultBeanNames.CONTEXT;
 	}
 
 	@Override
@@ -124,7 +124,7 @@ class CassandraMappingContextParser extends AbstractSingleBeanDefinitionParser {
 
 		if (table != null) {
 			tableName = table.getAttribute("name");
-			tableName = (StringUtils.hasText(tableName) ? tableName : "");
+			tableName = StringUtils.hasText(tableName) ? tableName : "";
 			forceQuote = String.valueOf(Boolean.parseBoolean(table.getAttribute("force-quote")));
 		}
 

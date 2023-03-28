@@ -43,7 +43,8 @@ class CompositeKeyCrudIntegrationTests extends AbstractKeyspaceCreatingIntegrati
 
 	private CassandraOperations operations;
 
-	private CorrelationEntity correlationEntity1, correlationEntity2;
+	private CorrelationEntity correlationEntity1;
+	private CorrelationEntity correlationEntity2;
 
 	@BeforeEach
 	void setUp() {

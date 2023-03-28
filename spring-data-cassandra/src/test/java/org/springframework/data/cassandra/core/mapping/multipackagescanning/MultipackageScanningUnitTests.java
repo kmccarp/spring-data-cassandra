@@ -39,7 +39,7 @@ import org.springframework.data.mapping.context.MappingContext;
 class MultipackageScanningUnitTests {
 
 	private MappingContext<? extends CassandraPersistentEntity<?>, ? extends CassandraPersistentProperty> context;
-	private String pkg = getClass().getPackage().getName();
+	private final String pkg = getClass().getPackage().getName();
 
 	@BeforeEach
 	void before() throws ClassNotFoundException {
