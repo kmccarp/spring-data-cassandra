@@ -187,7 +187,7 @@ public class CassandraExtension implements BeforeAllCallback, AfterAllCallback, 
 		});
 	}
 
-	public static class Resources {
+	public static final class Resources {
 
 		private final CqlSession systemSession;
 		private final CqlSession cqlSession;

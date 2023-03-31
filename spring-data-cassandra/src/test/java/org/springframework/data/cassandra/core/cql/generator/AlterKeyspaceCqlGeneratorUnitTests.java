@@ -57,15 +57,15 @@ public class AlterKeyspaceCqlGeneratorUnitTests {
 	/**
 	 * Convenient base class that other test classes can use so as not to repeat the generics declarations.
 	 */
-	static abstract class AlterKeyspaceTest
+	abstract static class AlterKeyspaceTest
 			extends AbstractKeyspaceOperationCqlGeneratorTest<AlterKeyspaceSpecification, AlterKeyspaceCqlGenerator> {}
 
 	static class CompleteTest extends AlterKeyspaceTest {
 
-		private String name = RandomKeyspaceName.create();
-		private Boolean durableWrites = true;
+		private final String name = RandomKeyspaceName.create();
+		private final Boolean durableWrites = true;
 
-		private Map<Option, Object> replicationMap = new HashMap<>();
+		private final Map<Option, Object> replicationMap = new HashMap<>();
 
 		@Override
 		public AlterKeyspaceSpecification specification() {
@@ -95,10 +95,10 @@ public class AlterKeyspaceCqlGeneratorUnitTests {
 
 	static class ReplicationMapOnlyTest extends AlterKeyspaceTest {
 
-		private String name = "mytable";
+		private final String name = "mytable";
 		public Boolean durableWrites = true;
 
-		private Map<Option, Object> replicationMap = new HashMap<>();
+		private final Map<Option, Object> replicationMap = new HashMap<>();
 
 		@Override
 		public AlterKeyspaceSpecification specification() {

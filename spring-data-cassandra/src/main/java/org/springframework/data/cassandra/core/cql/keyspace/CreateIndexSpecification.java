@@ -33,20 +33,20 @@ import com.datastax.oss.driver.api.core.CqlIdentifier;
  * @author David Webb
  * @author Mark Paluch
  */
-public class CreateIndexSpecification extends IndexNameSpecification<CreateIndexSpecification>
+public final class CreateIndexSpecification extends IndexNameSpecification<CreateIndexSpecification>
 		implements IndexDescriptor {
 
 	private @Nullable CqlIdentifier tableName;
 
 	private @Nullable CqlIdentifier columnName;
 
-	private boolean ifNotExists = false;
+	private boolean ifNotExists;
 
 	private ColumnFunction columnFunction = ColumnFunction.NONE;
 
 	private @Nullable String using;
 
-	private boolean custom = false;
+	private boolean custom;
 
 	private final Map<String, String> options = new LinkedHashMap<>();
 

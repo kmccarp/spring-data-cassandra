@@ -48,8 +48,8 @@ import com.datastax.oss.driver.api.core.metadata.schema.TableMetadata;
  */
 class IndexCreationIntegrationTests extends AbstractKeyspaceCreatingIntegrationTests {
 
-	private CassandraMappingContext mappingContext = new CassandraMappingContext();
-	private SchemaFactory schemaFactory = new SchemaFactory(new MappingCassandraConverter(mappingContext));
+	private final CassandraMappingContext mappingContext = new CassandraMappingContext();
+	private final SchemaFactory schemaFactory = new SchemaFactory(new MappingCassandraConverter(mappingContext));
 	private Version cassandraVersion;
 
 	@BeforeEach

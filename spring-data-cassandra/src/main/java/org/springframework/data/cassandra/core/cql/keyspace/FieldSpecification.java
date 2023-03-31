@@ -29,7 +29,7 @@ import com.datastax.oss.driver.api.core.type.DataType;
  * @since 1.5
  * @see CqlIdentifier
  */
-public class FieldSpecification {
+public final class FieldSpecification {
 
 	private final CqlIdentifier name;
 	private final DataType type;

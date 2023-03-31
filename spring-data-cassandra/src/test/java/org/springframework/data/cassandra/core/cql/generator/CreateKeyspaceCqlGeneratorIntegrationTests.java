@@ -35,7 +35,7 @@ class CreateKeyspaceCqlGeneratorIntegrationTests {
 	 *
 	 * @param <T> The concrete unit test class to which this integration test corresponds.
 	 */
-	static abstract class Base<T extends CreateKeyspaceTest> extends AbstractKeyspaceCreatingIntegrationTests {
+	abstract static class Base<T extends CreateKeyspaceTest> extends AbstractKeyspaceCreatingIntegrationTests {
 		private T unit;
 
 		protected abstract T unit();

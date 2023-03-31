@@ -33,7 +33,7 @@ import org.springframework.util.Assert;
  * @author Mark Paluch
  * @since 2.2
  */
-class FindByIdQuery {
+final class FindByIdQuery {
 
 	private final @Nullable String idProperty;
 	private final List<Object> idCollection;

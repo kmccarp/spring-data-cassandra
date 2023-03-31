@@ -281,7 +281,7 @@ class CassandraQueryCreator extends AbstractQueryCreator<Query, Filter> {
 	 */
 	static class QueryBuilder {
 
-		private List<CriteriaDefinition> criterias = new ArrayList<>();
+		private final List<CriteriaDefinition> criterias = new ArrayList<>();
 
 		CriteriaDefinition and(CriteriaDefinition clause) {
 			criterias.add(clause);

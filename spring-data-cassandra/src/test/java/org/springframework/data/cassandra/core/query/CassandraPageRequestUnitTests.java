@@ -32,7 +32,7 @@ import org.springframework.data.domain.Sort.Direction;
  */
 class CassandraPageRequestUnitTests {
 
-	private ByteBuffer pagingState = ByteBuffer.allocate(1);
+	private final ByteBuffer pagingState = ByteBuffer.allocate(1);
 
 	@Test // DATACASS-56
 	void shouldNotAllowNonZeroPageConstruction() {

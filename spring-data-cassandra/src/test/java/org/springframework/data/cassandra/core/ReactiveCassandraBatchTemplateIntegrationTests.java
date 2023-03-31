@@ -52,8 +52,8 @@ class ReactiveCassandraBatchTemplateIntegrationTests extends AbstractKeyspaceCre
 
 	private ReactiveCassandraTemplate template;
 
-	private Group walter = new Group(new GroupKey("users", "0x1", "walter"));
-	private Group mike = new Group(new GroupKey("users", "0x1", "mike"));
+	private final Group walter = new Group(new GroupKey("users", "0x1", "walter"));
+	private final Group mike = new Group(new GroupKey("users", "0x1", "mike"));
 
 	@BeforeEach
 	void setUp() {

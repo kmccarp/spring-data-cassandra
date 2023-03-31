@@ -25,7 +25,7 @@ import com.datastax.oss.driver.api.core.CqlIdentifier;
  * @since 1.5
  * @see CqlIdentifier
  */
-public class DropUserTypeSpecification extends UserTypeNameSpecification {
+public final class DropUserTypeSpecification extends UserTypeNameSpecification {
 
 	private boolean ifExists;
 
