@@ -39,6 +39,8 @@ public class Person {
 	@PrimaryKeyClass
 	public static class Key implements Serializable {
 
+		private static final long serialVersionUID = 1;
+
 		@PrimaryKeyColumn(ordinal = 0, type = PrimaryKeyType.PARTITIONED)
 		private String type;
 

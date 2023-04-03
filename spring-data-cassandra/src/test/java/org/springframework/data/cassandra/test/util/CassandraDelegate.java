@@ -459,7 +459,7 @@ class CassandraDelegate {
 
 	}
 
-	private static class ResourceHolder {
+	private static final class ResourceHolder {
 
 		private final CqlSessionBuilder sessionBuilder;
 		private final CqlSession system;

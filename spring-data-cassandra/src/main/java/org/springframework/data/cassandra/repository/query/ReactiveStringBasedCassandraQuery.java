@@ -164,8 +164,7 @@ public class ReactiveStringBasedCassandraQuery extends AbstractReactiveCassandra
 
 		return evaluationContextProvider
 				.getEvaluationContextLater(getQueryMethod().getParameters(), accessor.getValues(), dependencies)
-				.map(evaluationContext -> (SpELExpressionEvaluator) new DefaultSpELExpressionEvaluator(expressionParser,
-						evaluationContext))
+				.map(SpELExpressionEvaluator.class::cast)
 				.defaultIfEmpty(DefaultSpELExpressionEvaluator.unsupported());
 	}
 }

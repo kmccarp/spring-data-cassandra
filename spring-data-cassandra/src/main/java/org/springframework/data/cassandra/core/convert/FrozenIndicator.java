@@ -25,7 +25,7 @@ import java.util.List;
  * @author Mark Paluch
  * @since 3.0
  */
-class FrozenIndicator {
+final class FrozenIndicator {
 
 	public static final FrozenIndicator NOT_FROZEN = new FrozenIndicator();
 

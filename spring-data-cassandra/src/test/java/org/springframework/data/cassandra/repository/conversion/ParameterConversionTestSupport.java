@@ -81,7 +81,8 @@ abstract class ParameterConversionTestSupport extends AbstractSpringDataEmbedded
 	@Autowired CassandraOperations template;
 	@Autowired CassandraAdminOperations adminOperations;
 
-	Contact walter, flynn;
+	Contact walter;
+	Contact flynn;
 
 	@BeforeEach
 	public void before() {
@@ -154,7 +155,7 @@ abstract class ParameterConversionTestSupport extends AbstractSpringDataEmbedded
 	 */
 	private static class PhoneWriteConverter implements Converter<Phone, UdtValue> {
 
-		private UserTypeResolver userTypeResolver;
+		private final UserTypeResolver userTypeResolver;
 
 		PhoneWriteConverter(UserTypeResolver userTypeResolver) {
 			this.userTypeResolver = userTypeResolver;

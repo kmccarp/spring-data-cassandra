@@ -35,7 +35,7 @@ import com.datastax.oss.driver.api.core.type.codec.registry.CodecRegistry;
  *
  * @author Mark Paluch
  */
-class StubParameterAccessor implements CassandraParameterAccessor {
+final class StubParameterAccessor implements CassandraParameterAccessor {
 
 	private final Object[] values;
 

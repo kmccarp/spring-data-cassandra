@@ -1071,6 +1071,8 @@ public class MappingCassandraConverterUnitTests {
 	@PrimaryKeyClass
 	public static class EnumCompositePrimaryKey implements Serializable {
 
+		private static final long serialVersionUID = 1;
+
 		@PrimaryKeyColumn(ordinal = 1, type = PrimaryKeyType.PARTITIONED) private Condition condition;
 
 		private EnumCompositePrimaryKey() {}
@@ -1092,6 +1094,8 @@ public class MappingCassandraConverterUnitTests {
 	@RequiredArgsConstructor
 	@lombok.Value
 	public static class EnumAndDateCompositePrimaryKey implements Serializable {
+
+		private static final long serialVersionUID = 1;
 
 		@PrimaryKeyColumn(ordinal = 1, type = PrimaryKeyType.PARTITIONED) private final Condition condition;
 
@@ -1227,7 +1231,7 @@ public class MappingCassandraConverterUnitTests {
 
 	}
 
-	private static class WithValue {
+	private static final class WithValue {
 
 		private final @Id String id;
 		private final @Transient String firstname;

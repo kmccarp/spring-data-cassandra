@@ -36,7 +36,7 @@ import com.datastax.oss.driver.api.core.CqlIdentifier;
  * @author Sam Lightfoot
  * @since 2.0
  */
-public class InsertOptions extends WriteOptions {
+public final class InsertOptions extends WriteOptions {
 
 	private static final InsertOptions EMPTY = new InsertOptionsBuilder().build();
 
@@ -141,7 +141,7 @@ public class InsertOptions extends WriteOptions {
 	 * @author Lukasz Antoniak
 	 * @since 2.0
 	 */
-	public static class InsertOptionsBuilder extends WriteOptionsBuilder {
+	public static final class InsertOptionsBuilder extends WriteOptionsBuilder {
 
 		private boolean ifNotExists;
 

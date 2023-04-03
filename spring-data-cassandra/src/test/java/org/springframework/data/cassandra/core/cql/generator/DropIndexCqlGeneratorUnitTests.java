@@ -38,12 +38,12 @@ public class DropIndexCqlGeneratorUnitTests {
 	/**
 	 * Convenient base class that other test classes can use so as not to repeat the generics declarations.
 	 */
-	static abstract class DropIndexTest
+	abstract static class DropIndexTest
 			extends AbstractIndexOperationCqlGeneratorTest<DropIndexSpecification, DropIndexCqlGenerator> {}
 
 	static class BasicTest extends DropIndexTest {
 
-		private String name = "myindex";
+		private final String name = "myindex";
 
 		public DropIndexSpecification specification() {
 			return DropIndexSpecification.dropIndex(name);
@@ -64,7 +64,7 @@ public class DropIndexCqlGeneratorUnitTests {
 
 	static class IfExistsTest extends DropIndexTest {
 
-		private String name = "myindex";
+		private final String name = "myindex";
 
 		public DropIndexSpecification specification() {
 			return DropIndexSpecification.dropIndex(name)

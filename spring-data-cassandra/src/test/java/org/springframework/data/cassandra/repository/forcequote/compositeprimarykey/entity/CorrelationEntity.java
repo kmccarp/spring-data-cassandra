@@ -120,21 +120,27 @@ public class CorrelationEntity {
 
 		@Override
 		public boolean equals(@Nullable Object o) {
-			if (this == o)
+			if (this == o) {
 				return true;
-			if (!(o instanceof IdentityEntity))
+			}
+			if (!(o instanceof IdentityEntity)) {
 				return false;
+			}
 
 			IdentityEntity that = (IdentityEntity) o;
 
-			if (correlatedType != null ? !correlatedType.equals(that.correlatedType) : that.correlatedType != null)
+			if (correlatedType != null ? !correlatedType.equals(that.correlatedType) : that.correlatedType != null) {
 				return false;
-			if (correlatedValue != null ? !correlatedValue.equals(that.correlatedValue) : that.correlatedValue != null)
+			}
+			if (correlatedValue != null ? !correlatedValue.equals(that.correlatedValue) : that.correlatedValue != null) {
 				return false;
-			if (ts != null ? !ts.equals(that.ts) : that.ts != null)
+			}
+			if (ts != null ? !ts.equals(that.ts) : that.ts != null) {
 				return false;
-			if (!type.equals(that.type))
+			}
+			if (!type.equals(that.type)) {
 				return false;
+			}
 			return value.equals(that.value);
 		}
 
@@ -184,15 +190,18 @@ public class CorrelationEntity {
 
 	@Override
 	public boolean equals(@Nullable Object o) {
-		if (this == o)
+		if (this == o) {
 			return true;
-		if (!(o instanceof CorrelationEntity))
+		}
+		if (!(o instanceof CorrelationEntity)) {
 			return false;
+		}
 
 		CorrelationEntity that = (CorrelationEntity) o;
 
-		if (extra != null ? !extra.equals(that.extra) : that.extra != null)
+		if (extra != null ? !extra.equals(that.extra) : that.extra != null) {
 			return false;
+		}
 		return identityEntity.equals(that.identityEntity);
 	}
 
