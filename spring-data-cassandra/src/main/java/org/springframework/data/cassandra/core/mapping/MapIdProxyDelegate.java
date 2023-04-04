@@ -43,8 +43,8 @@ class MapIdProxyDelegate implements InvocationHandler {
 
 	}
 
-	private MapId delegate = new BasicMapId();
-	private Class<?> idInterface;
+	private final MapId delegate = new BasicMapId();
+	private final Class<?> idInterface;
 
 	MapIdProxyDelegate(Class<?> idInterface) {
 		this.idInterface = idInterface;

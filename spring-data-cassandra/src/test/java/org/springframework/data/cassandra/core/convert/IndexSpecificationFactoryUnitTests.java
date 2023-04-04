@@ -43,7 +43,7 @@ import com.datastax.oss.driver.api.core.CqlIdentifier;
  */
 class IndexSpecificationFactoryUnitTests {
 
-	private CassandraMappingContext mappingContext = new CassandraMappingContext();
+	private final CassandraMappingContext mappingContext = new CassandraMappingContext();
 
 	@Test // DATACASS-213
 	void createIndexShouldConsiderAnnotatedProperties() {

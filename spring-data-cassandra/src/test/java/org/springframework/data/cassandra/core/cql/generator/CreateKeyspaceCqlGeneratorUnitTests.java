@@ -61,7 +61,7 @@ public class CreateKeyspaceCqlGeneratorUnitTests {
 	 * Convenient base class that other test classes can use so as not to repeat the generics declarations or
 	 * {@link #generator()} method.
 	 */
-	public static abstract class CreateKeyspaceTest
+	public abstract static class CreateKeyspaceTest
 			extends AbstractKeyspaceOperationCqlGeneratorTest<CreateKeyspaceSpecification, CreateKeyspaceCqlGenerator> {
 
 		@Override
@@ -72,10 +72,10 @@ public class CreateKeyspaceCqlGeneratorUnitTests {
 
 	static class BasicTest extends CreateKeyspaceTest {
 
-		private String name = RandomKeyspaceName.create();
-		private Boolean durableWrites = true;
+		private final String name = RandomKeyspaceName.create();
+		private final Boolean durableWrites = true;
 
-		private Map<Option, Object> replicationMap = KeyspaceAttributes.newSimpleReplication();
+		private final Map<Option, Object> replicationMap = KeyspaceAttributes.newSimpleReplication();
 
 		@Override
 		public CreateKeyspaceSpecification specification() {
@@ -97,10 +97,10 @@ public class CreateKeyspaceCqlGeneratorUnitTests {
 
 	static class NoOptionsBasicTest extends CreateKeyspaceTest {
 
-		private String name = RandomKeyspaceName.create();
-		private Boolean durableWrites = true;
+		private final String name = RandomKeyspaceName.create();
+		private final Boolean durableWrites = true;
 
-		private Map<Option, Object> replicationMap = KeyspaceAttributes.newSimpleReplication();
+		private final Map<Option, Object> replicationMap = KeyspaceAttributes.newSimpleReplication();
 
 		@Override
 		public CreateKeyspaceSpecification specification() {
@@ -121,10 +121,10 @@ public class CreateKeyspaceCqlGeneratorUnitTests {
 
 	static class NetworkTopologyTest extends CreateKeyspaceTest {
 
-		private String name = RandomKeyspaceName.create();
-		private Boolean durableWrites = false;
+		private final String name = RandomKeyspaceName.create();
+		private final Boolean durableWrites = false;
 
-		private Map<Option, Object> replicationMap = new HashMap<>();
+		private final Map<Option, Object> replicationMap = new HashMap<>();
 
 		@Override
 		public CreateKeyspaceSpecification specification() {

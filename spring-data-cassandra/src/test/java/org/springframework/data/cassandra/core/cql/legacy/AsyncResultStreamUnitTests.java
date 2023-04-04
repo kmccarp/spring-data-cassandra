@@ -38,10 +38,10 @@ import com.datastax.oss.driver.api.core.cql.Row;
  */
 class AsyncResultStreamUnitTests {
 
-	private AsyncResultSet first = mock(AsyncResultSet.class);
-	private AsyncResultSet last = mock(AsyncResultSet.class);
-	private Row row1 = mock(Row.class);
-	private Row row2 = mock(Row.class);
+	private final AsyncResultSet first = mock(AsyncResultSet.class);
+	private final AsyncResultSet last = mock(AsyncResultSet.class);
+	private final Row row1 = mock(Row.class);
+	private final Row row2 = mock(Row.class);
 
 	@Test // DATACASS-656
 	void shouldIterateFirstPage() {

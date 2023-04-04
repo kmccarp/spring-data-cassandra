@@ -830,7 +830,7 @@ class AsyncCqlTemplateUnitTests {
 		}
 	}
 
-	private static class TestResultSetFuture extends CompletableFuture<AsyncResultSet> {
+	private static final class TestResultSetFuture extends CompletableFuture<AsyncResultSet> {
 
 		private TestResultSetFuture() {}
 

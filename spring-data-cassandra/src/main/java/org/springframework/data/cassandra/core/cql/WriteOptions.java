@@ -152,7 +152,7 @@ public class WriteOptions extends QueryOptions {
 
 		protected Duration ttl = Duration.ofMillis(-1);
 
-		protected Long timestamp = null;
+		protected Long timestamp;
 
 		protected WriteOptionsBuilder() {}
 

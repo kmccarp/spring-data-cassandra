@@ -1454,7 +1454,7 @@ public class MappingCassandraConverter extends AbstractCassandraConverter
 		}
 	}
 
-	private static class PropertyTranslatingPropertyAccessor<T> implements PersistentPropertyPathAccessor<T> {
+	private static final class PropertyTranslatingPropertyAccessor<T> implements PersistentPropertyPathAccessor<T> {
 
 		private final PersistentPropertyAccessor<T> delegate;
 		private final PersistentPropertyTranslator propertyTranslator;
