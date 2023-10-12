@@ -59,16 +59,16 @@ import com.datastax.oss.driver.api.querybuilder.select.Select;
  */
 class StatementFactoryUnitTests {
 
-	private CassandraConverter converter = new MappingCassandraConverter();
+    private final CassandraConverter converter = new MappingCassandraConverter();
 
-	private UpdateMapper updateMapper = new UpdateMapper(converter);
+    private final UpdateMapper updateMapper = new UpdateMapper(converter);
 
-	private StatementFactory statementFactory = new StatementFactory(updateMapper, updateMapper);
+    private final StatementFactory statementFactory = new StatementFactory(updateMapper, updateMapper);
 
-	private CassandraPersistentEntity<?> groupEntity = converter.getMappingContext()
-			.getRequiredPersistentEntity(Group.class);
-	private CassandraPersistentEntity<?> personEntity = converter.getMappingContext()
-			.getRequiredPersistentEntity(Person.class);
+    private final CassandraPersistentEntity<?> groupEntity = converter.getMappingContext()
+            .getRequiredPersistentEntity(Group.class);
+    private final CassandraPersistentEntity<?> personEntity = converter.getMappingContext()
+            .getRequiredPersistentEntity(Person.class);
 
 	@Test // DATACASS-343
 	void shouldMapSimpleSelectQuery() {

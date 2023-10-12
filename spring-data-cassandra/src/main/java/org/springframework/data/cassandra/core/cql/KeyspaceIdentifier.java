@@ -130,7 +130,7 @@ public final class KeyspaceIdentifier implements Comparable<KeyspaceIdentifier> 
 			return false;
 		}
 
-		KeyspaceIdentifier other = (that instanceof KeyspaceIdentifier) ? (KeyspaceIdentifier) that
+		KeyspaceIdentifier other = that instanceof KeyspaceIdentifier ? (KeyspaceIdentifier) that
 				: of((CharSequence) that);
 
 		return this.identifier.equals(other.identifier);

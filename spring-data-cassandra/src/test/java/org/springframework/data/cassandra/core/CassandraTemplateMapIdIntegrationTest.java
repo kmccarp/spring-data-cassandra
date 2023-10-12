@@ -76,8 +76,8 @@ class CassandraTemplateMapIdIntegrationTest extends AbstractKeyspaceCreatingInte
 		assertThat(operations.selectOneById(id, SinglePkc.class)).isNull();
 	}
 
-	@Table
-	private static class SinglePkc {
+    @Table
+    private static final class SinglePkc {
 
 		@PrimaryKeyColumn(ordinal = 0, type = PrimaryKeyType.PARTITIONED) private String key;
 
@@ -104,8 +104,8 @@ class CassandraTemplateMapIdIntegrationTest extends AbstractKeyspaceCreatingInte
 		}
 	}
 
-	@Table
-	private static class MultiPkc {
+    @Table
+    private static final class MultiPkc {
 
 		@PrimaryKeyColumn(ordinal = 0, type = PrimaryKeyType.PARTITIONED) private String key0;
 

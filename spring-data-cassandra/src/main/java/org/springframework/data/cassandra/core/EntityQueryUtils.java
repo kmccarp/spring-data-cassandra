@@ -157,7 +157,7 @@ class EntityQueryUtils {
 	 */
 	private static <T> Iterator<T> limit(Iterator<T> iterator, int limitSize) {
 
-		return new Iterator<T>() {
+		return new Iterator<>() {
 			private int count;
 
 			@Override

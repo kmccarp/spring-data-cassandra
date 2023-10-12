@@ -403,10 +403,12 @@ public class SchemaFactory {
 
 		@Override
 		public boolean equals(@Nullable Object o) {
-			if (this == o)
-				return true;
-			if (!(o instanceof UserDefinedType that))
-				return false;
+            if (this == o) {
+                return true;
+            }
+            if (!(o instanceof UserDefinedType that)) {
+                return false;
+            }
 			return isFrozen() == that.isFrozen() && Objects.equals(getName(), that.getName());
 		}
 

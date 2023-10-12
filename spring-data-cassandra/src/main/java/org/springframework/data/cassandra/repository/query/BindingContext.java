@@ -112,12 +112,12 @@ class BindingContext {
 						String.format("Invalid parameter name; Cannot resolve parameter [%s]", parameterName)));
 	}
 
-	/**
-	 * A generic parameter binding with name or position information.
-	 *
-	 * @author Mark Paluch
-	 */
-	static class ParameterBinding {
+    /**
+     * A generic parameter binding with name or position information.
+     *
+     * @author Mark Paluch
+     */
+    static final class ParameterBinding {
 
 		private final int parameterIndex;
 		private final @Nullable String expression;
@@ -143,7 +143,7 @@ class BindingContext {
 		}
 
 		boolean isNamed() {
-			return (parameterName != null);
+			return parameterName != null;
 		}
 
 		int getParameterIndex() {
@@ -151,7 +151,7 @@ class BindingContext {
 		}
 
 		String getParameter() {
-			return ("?" + (isExpression() ? "expr" : "") + parameterIndex);
+			return "?" + (isExpression() ? "expr" : "") + parameterIndex;
 		}
 
 		String getRequiredExpression() {
@@ -161,7 +161,7 @@ class BindingContext {
 		}
 
 		boolean isExpression() {
-			return (this.expression != null);
+			return this.expression != null;
 		}
 
 		String getRequiredParameterName() {

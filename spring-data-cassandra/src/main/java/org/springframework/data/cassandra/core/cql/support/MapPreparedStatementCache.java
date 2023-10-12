@@ -41,7 +41,7 @@ import com.datastax.oss.driver.api.core.cql.SimpleStatement;
  *             prepared statements superfluous.
  */
 @Deprecated
-public class MapPreparedStatementCache implements PreparedStatementCache {
+public final class MapPreparedStatementCache implements PreparedStatementCache {
 
 	private final Map<CacheKey, PreparedStatement> cache;
 

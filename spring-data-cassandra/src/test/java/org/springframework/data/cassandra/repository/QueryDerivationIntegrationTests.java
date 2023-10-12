@@ -512,7 +512,8 @@ class QueryDerivationIntegrationTests extends AbstractSpringDataEmbeddedCassandr
 
 		class PersonDto {
 
-			public String firstname, lastname;
+            public String firstname;
+            public String lastname;
 
 			public PersonDto(String firstname, String lastname) {
 				this.firstname = firstname;
@@ -554,21 +555,19 @@ class QueryDerivationIntegrationTests extends AbstractSpringDataEmbeddedCassandr
 
 		@Override
 		public boolean equals(Object o) {
-			if (this == o)
-				return true;
-			if (o == null || getClass() != o.getClass())
-				return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 
 			PersonWithEmbedded that = (PersonWithEmbedded) o;
 
 			if (!ObjectUtils.nullSafeEquals(id, that.id)) {
 				return false;
 			}
-			if (!ObjectUtils.nullSafeEquals(name, that.name)) {
-				return false;
-			}
-
-			return true;
+            return ObjectUtils.nullSafeEquals(name, that.name);
 		}
 
 		@Override
@@ -602,21 +601,19 @@ class QueryDerivationIntegrationTests extends AbstractSpringDataEmbeddedCassandr
 
 		@Override
 		public boolean equals(Object o) {
-			if (this == o)
-				return true;
-			if (o == null || getClass() != o.getClass())
-				return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 
 			Name name = (Name) o;
 
 			if (!ObjectUtils.nullSafeEquals(firstname, name.firstname)) {
 				return false;
 			}
-			if (!ObjectUtils.nullSafeEquals(lastname, name.lastname)) {
-				return false;
-			}
-
-			return true;
+            return ObjectUtils.nullSafeEquals(lastname, name.lastname);
 		}
 
 		@Override

@@ -313,7 +313,7 @@ public abstract class ScriptUtils {
 	public static String readScript(LineNumberReader lineNumberReader, @Nullable String lineCommentPrefix,
 			@Nullable String separator, @Nullable String blockCommentEndDelimiter) throws IOException {
 
-		String[] lineCommentPrefixes = (lineCommentPrefix != null) ? new String[] { lineCommentPrefix } : null;
+		String[] lineCommentPrefixes = lineCommentPrefix != null ? new String[] { lineCommentPrefix } : null;
 		return readScript(lineNumberReader, lineCommentPrefixes, separator, blockCommentEndDelimiter);
 	}
 

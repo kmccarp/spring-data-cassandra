@@ -690,8 +690,6 @@ public class AsyncCassandraTemplate
 			AdaptibleEntity<Object> source, CqlIdentifier tableName) {
 
 		StatementBuilder<Delete> delete = getStatementFactory().delete(entity, options, getConverter(), tableName);
-		;
-
 		return executeDelete(entity, tableName, source.appendVersionCondition(delete).build(), result -> {
 
 			if (!result.wasApplied()) {

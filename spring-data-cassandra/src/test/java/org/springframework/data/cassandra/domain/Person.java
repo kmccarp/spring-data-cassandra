@@ -150,17 +150,21 @@ public class Person {
 
 	@Override
 	public boolean equals(Object o) {
-		if (this == o)
-			return true;
-		if (o == null || getClass() != o.getClass())
-			return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
 		Person person = (Person) o;
 
-		if (numberOfChildren != person.numberOfChildren)
-			return false;
-		if (cool != person.cool)
-			return false;
+        if (numberOfChildren != person.numberOfChildren) {
+            return false;
+        }
+        if (cool != person.cool) {
+            return false;
+        }
 		if (!ObjectUtils.nullSafeEquals(lastname, person.lastname)) {
 			return false;
 		}

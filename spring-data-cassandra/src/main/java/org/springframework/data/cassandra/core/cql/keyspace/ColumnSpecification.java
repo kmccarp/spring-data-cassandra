@@ -39,7 +39,7 @@ import com.datastax.oss.driver.api.core.type.DataType;
  * @author Mark Paluch
  * @author Aleksei Zotov
  */
-public class ColumnSpecification {
+public final class ColumnSpecification {
 
 	/**
 	 * Default ordering of primary key fields; value is {@link Ordering#ASCENDING}.

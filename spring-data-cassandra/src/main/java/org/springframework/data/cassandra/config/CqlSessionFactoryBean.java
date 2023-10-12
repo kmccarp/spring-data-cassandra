@@ -109,7 +109,7 @@ public class CqlSessionFactoryBean
 
 	private SchemaAction schemaAction = SchemaAction.NONE;
 
-	private boolean suspendLifecycleSchemaRefresh = false;
+	private boolean suspendLifecycleSchemaRefresh;
 
 	private @Nullable SessionBuilderConfigurer sessionBuilderConfigurer;
 
@@ -422,7 +422,7 @@ public class CqlSessionFactoryBean
 	 */
 	@Deprecated
 	public void setStartupScripts(@Nullable List<String> scripts) {
-		this.startupScripts = (scripts != null ? new ArrayList<>(scripts) : Collections.emptyList());
+		this.startupScripts = scripts != null ? new ArrayList<>(scripts) : Collections.emptyList();
 	}
 
 	/**
@@ -610,13 +610,17 @@ public class CqlSessionFactoryBean
 
 		switch (this.schemaAction) {
 			case RECREATE_DROP_UNUSED:
-				dropUnused = true;
+                dropUnused = true;
+                break;
 			case RECREATE:
-				drop = true;
+                drop = true;
+                break;
 			case CREATE_IF_NOT_EXISTS:
-				ifNotExists = SchemaAction.CREATE_IF_NOT_EXISTS.equals(this.schemaAction);
+                ifNotExists = SchemaAction.CREATE_IF_NOT_EXISTS.equals(this.schemaAction);
+                break;
 			case CREATE:
-				create = true;
+                create = true;
+                break;
 			case NONE:
 			default:
 				// do nothing
@@ -778,10 +782,10 @@ public class CqlSessionFactoryBean
 				.collect(Collectors.toList());
 	}
 
-	/**
-	 * Value object to encapsulate host and port.
-	 */
-	private static class HostAndPort {
+    /**
+     * Value object to encapsulate host and port.
+     */
+    private static final class HostAndPort {
 
 		private final String host;
 

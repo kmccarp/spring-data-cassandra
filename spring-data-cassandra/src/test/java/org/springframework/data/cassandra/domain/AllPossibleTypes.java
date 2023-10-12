@@ -379,27 +379,36 @@ public class AllPossibleTypes {
 
 	@Override
 	public boolean equals(Object o) {
-		if (this == o)
-			return true;
-		if (o == null || getClass() != o.getClass())
-			return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
 		AllPossibleTypes that = (AllPossibleTypes) o;
 
-		if (primitiveByte != that.primitiveByte)
-			return false;
-		if (primitiveShort != that.primitiveShort)
-			return false;
-		if (primitiveLong != that.primitiveLong)
-			return false;
-		if (primitiveInteger != that.primitiveInteger)
-			return false;
-		if (primitiveFloat != that.primitiveFloat)
-			return false;
-		if (primitiveDouble != that.primitiveDouble)
-			return false;
-		if (primitiveBoolean != that.primitiveBoolean)
-			return false;
+        if (primitiveByte != that.primitiveByte) {
+            return false;
+        }
+        if (primitiveShort != that.primitiveShort) {
+            return false;
+        }
+        if (primitiveLong != that.primitiveLong) {
+            return false;
+        }
+        if (primitiveInteger != that.primitiveInteger) {
+            return false;
+        }
+        if (primitiveFloat != that.primitiveFloat) {
+            return false;
+        }
+        if (primitiveDouble != that.primitiveDouble) {
+            return false;
+        }
+        if (primitiveBoolean != that.primitiveBoolean) {
+            return false;
+        }
 		if (!ObjectUtils.nullSafeEquals(id, that.id)) {
 			return false;
 		}
@@ -463,8 +472,9 @@ public class AllPossibleTypes {
 		if (!ObjectUtils.nullSafeEquals(mapOfString, that.mapOfString)) {
 			return false;
 		}
-		if (anEnum != that.anEnum)
-			return false;
+        if (anEnum != that.anEnum) {
+            return false;
+        }
 		if (!ObjectUtils.nullSafeEquals(setOfEnum, that.setOfEnum)) {
 			return false;
 		}

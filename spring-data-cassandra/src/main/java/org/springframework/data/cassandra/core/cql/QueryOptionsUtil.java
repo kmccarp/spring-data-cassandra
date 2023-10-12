@@ -216,7 +216,7 @@ public abstract class QueryOptionsUtil {
 	 * @param <T>
 	 * @since 4.2
 	 */
-	public static abstract class CqlStatementOptionsAccessor<T> {
+	public abstract static class CqlStatementOptionsAccessor<T> {
 
 		/**
 		 * Set the timestamp to the underlying statement.
@@ -306,12 +306,12 @@ public abstract class QueryOptionsUtil {
 
 	}
 
-	/**
-	 * Accessor variant that uses bind markers.
-	 *
-	 * @param <T>
-	 */
-	private static class BoundOptionsAccessor<T> extends CqlStatementOptionsAccessor<T> {
+    /**
+     * Accessor variant that uses bind markers.
+     *
+     * @param <T>
+     */
+    private static final class BoundOptionsAccessor<T> extends CqlStatementOptionsAccessor<T> {
 
 		private final Bindings bindings;
 		private T instance;
@@ -348,12 +348,12 @@ public abstract class QueryOptionsUtil {
 
 	}
 
-	/**
-	 * Accessor variant that uses inline values.
-	 *
-	 * @param <T>
-	 */
-	private static class InlineOptionsAccessor<T> extends CqlStatementOptionsAccessor<T> {
+    /**
+     * Accessor variant that uses inline values.
+     *
+     * @param <T>
+     */
+    private static final class InlineOptionsAccessor<T> extends CqlStatementOptionsAccessor<T> {
 
 		private T instance;
 

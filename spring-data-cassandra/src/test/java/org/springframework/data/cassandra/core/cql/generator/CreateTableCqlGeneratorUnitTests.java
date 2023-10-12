@@ -123,7 +123,7 @@ class CreateTableCqlGeneratorUnitTests {
 		Double dcLocalReadRepairChance = 0.7;
 		Double bloomFilterFpChance = 0.001;
 		Boolean replcateOnWrite = Boolean.FALSE;
-		Long gcGraceSeconds = 600l;
+		Long gcGraceSeconds = 600L;
 		String comment = "This is My Table";
 		Map<Option, Object> compactionMap = new LinkedHashMap<>();
 		Map<Option, Object> compressionMap = new LinkedHashMap<>();

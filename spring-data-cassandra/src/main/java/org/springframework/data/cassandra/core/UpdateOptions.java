@@ -40,7 +40,7 @@ import com.datastax.oss.driver.api.core.CqlIdentifier;
  * @author Sam Lightfoot
  * @since 2.0
  */
-public class UpdateOptions extends WriteOptions {
+public final class UpdateOptions extends WriteOptions {
 
 	private static final UpdateOptions EMPTY = new UpdateOptionsBuilder().build();
 
@@ -138,14 +138,14 @@ public class UpdateOptions extends WriteOptions {
 		return result;
 	}
 
-	/**
-	 * Builder for {@link UpdateOptions}.
-	 *
-	 * @author Mark Paluch
-	 * @author Lukasz Antoniak
-	 * @since 2.0
-	 */
-	public static class UpdateOptionsBuilder extends WriteOptionsBuilder {
+    /**
+     * Builder for {@link UpdateOptions}.
+     *
+     * @author Mark Paluch
+     * @author Lukasz Antoniak
+     * @since 2.0
+     */
+    public static final class UpdateOptionsBuilder extends WriteOptionsBuilder {
 
 		private @Nullable Filter ifCondition;
 

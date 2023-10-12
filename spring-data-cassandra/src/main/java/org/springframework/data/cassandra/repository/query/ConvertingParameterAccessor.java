@@ -145,7 +145,7 @@ class ConvertingParameterAccessor implements CassandraParameterAccessor {
 
 		private final Iterator<Object> delegate;
 
-		private int index = 0;
+		private int index;
 
 		/**
 		 * Create a new {@link ConvertingIterator} for the given delegate.

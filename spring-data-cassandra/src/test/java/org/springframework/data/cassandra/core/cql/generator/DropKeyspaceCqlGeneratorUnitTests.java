@@ -40,7 +40,7 @@ class DropKeyspaceCqlGeneratorUnitTests {
 	/**
 	 * Convenient base class that other test classes can use so as not to repeat the generics declarations.
 	 */
-	static abstract class DropTableTest
+	abstract static class DropTableTest
 			extends AbstractKeyspaceOperationCqlGeneratorTest<DropKeyspaceSpecification, DropKeyspaceCqlGenerator> {}
 
 	static class BasicTest extends DropTableTest {

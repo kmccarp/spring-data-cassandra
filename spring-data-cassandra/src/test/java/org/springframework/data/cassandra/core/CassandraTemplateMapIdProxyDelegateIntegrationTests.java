@@ -83,8 +83,8 @@ public class CassandraTemplateMapIdProxyDelegateIntegrationTests extends Abstrac
 		String key();
 	}
 
-	@Table
-	private static class SinglePkc {
+    @Table
+    private static final class SinglePkc {
 
 		@PrimaryKeyColumn(ordinal = 0, type = PrimaryKeyType.PARTITIONED) private String key;
 
@@ -149,8 +149,8 @@ public class CassandraTemplateMapIdProxyDelegateIntegrationTests extends Abstrac
 		String key1();
 	}
 
-	@Table
-	private static class MultiPkc {
+    @Table
+    private static final class MultiPkc {
 
 		@PrimaryKeyColumn(ordinal = 0, type = PrimaryKeyType.PARTITIONED) private String key0;
 

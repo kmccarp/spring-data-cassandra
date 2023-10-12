@@ -1203,7 +1203,7 @@ public class MappingCassandraConverterUnitTests {
 
 	}
 
-	private static class WithValue {
+    private static final class WithValue {
 
 		private final @Id String id;
 		private final @Transient String firstname;
@@ -1331,10 +1331,12 @@ public class MappingCassandraConverterUnitTests {
 
 		@Override
 		public boolean equals(Object o) {
-			if (this == o)
-				return true;
-			if (o == null || getClass() != o.getClass())
-				return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 
 			EmbeddedWithSimpleTypes that = (EmbeddedWithSimpleTypes) o;
 
