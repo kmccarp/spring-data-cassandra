@@ -43,11 +43,11 @@ import org.springframework.data.repository.config.RepositoryConfigurationSource;
  */
 public class CassandraRepositoryConfigurationExtensionUnitTests {
 
-	private StandardAnnotationMetadata metadata = new StandardAnnotationMetadata(Config.class, true);
-	private ResourceLoader loader = new PathMatchingResourcePatternResolver();
-	private Environment environment = new StandardEnvironment();
-	private BeanDefinitionRegistry registry = new DefaultListableBeanFactory();
-	private RepositoryConfigurationSource configurationSource = new AnnotationRepositoryConfigurationSource(metadata,
+	private final StandardAnnotationMetadata metadata = new StandardAnnotationMetadata(Config.class, true);
+	private final ResourceLoader loader = new PathMatchingResourcePatternResolver();
+	private final Environment environment = new StandardEnvironment();
+	private final BeanDefinitionRegistry registry = new DefaultListableBeanFactory();
+	private final RepositoryConfigurationSource configurationSource = new AnnotationRepositoryConfigurationSource(metadata,
 			EnableCassandraRepositories.class, loader, environment, registry);
 
 	private CassandraRepositoryConfigurationExtension extension;

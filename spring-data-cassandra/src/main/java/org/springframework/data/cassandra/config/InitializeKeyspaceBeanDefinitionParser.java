@@ -82,8 +82,8 @@ class InitializeKeyspaceBeanDefinitionParser extends AbstractBeanDefinitionParse
 
 		BeanDefinitionBuilder builder = BeanDefinitionBuilder.genericBeanDefinition(CompositeKeyspacePopulator.class);
 
-		boolean ignoreFailedDrops = element.getAttribute("ignore-failures").equals("DROPS");
-		boolean continueOnError = element.getAttribute("ignore-failures").equals("ALL");
+		boolean ignoreFailedDrops = "DROPS".equals(element.getAttribute("ignore-failures"));
+		boolean continueOnError = "ALL".equals(element.getAttribute("ignore-failures"));
 
 		ManagedList<BeanMetadataElement> delegates = new ManagedList<>();
 		for (Element scriptElement : scripts) {

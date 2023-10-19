@@ -138,7 +138,7 @@ class AsyncOptimisticLockingIntegrationTests extends AbstractKeyspaceCreatingInt
 		}
 	}
 
-	static class VersionedEntity {
+	static final class VersionedEntity {
 
 		@Id final long id;
 

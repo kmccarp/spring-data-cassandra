@@ -185,7 +185,7 @@ class PreparedStatementDelegate {
 	 *
 	 * @param <T> the source type
 	 */
-	static class Source<T> {
+	static final class Source<T> {
 
 		private final Supplier<T> supplier;
 
@@ -234,7 +234,7 @@ class PreparedStatementDelegate {
 		 * @return a new filtered source instance
 		 */
 		public Source<T> whenHasText() {
-			return when((value) -> StringUtils.hasText(Objects.toString(value, null)));
+			return when(value -> StringUtils.hasText(Objects.toString(value, null)));
 		}
 
 		/**
@@ -268,7 +268,7 @@ class PreparedStatementDelegate {
 		public Source<T> when(Predicate<T> predicate) {
 
 			Assert.notNull(predicate, "Predicate must not be null");
-			return new Source<>(this.supplier, (this.predicate != null) ? this.predicate.and(predicate) : predicate);
+			return new Source<>(this.supplier, this.predicate != null ? this.predicate.and(predicate) : predicate);
 		}
 
 		/**

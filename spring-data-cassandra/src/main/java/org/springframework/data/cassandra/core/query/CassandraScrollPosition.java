@@ -65,7 +65,7 @@ public abstract sealed class CassandraScrollPosition implements ScrollPosition p
 
 	static final class Initial extends CassandraScrollPosition {
 
-		private final static Initial INSTANCE = new Initial();
+		private static final Initial INSTANCE = new Initial();
 
 		@Override
 		public boolean isInitial() {
@@ -98,10 +98,12 @@ public abstract sealed class CassandraScrollPosition implements ScrollPosition p
 
 		@Override
 		public boolean equals(Object o) {
-			if (this == o)
+			if (this == o) {
 				return true;
-			if (o == null || getClass() != o.getClass())
+			}
+			if (o == null || getClass() != o.getClass()) {
 				return false;
+			}
 
 			PagingState that = (PagingState) o;
 

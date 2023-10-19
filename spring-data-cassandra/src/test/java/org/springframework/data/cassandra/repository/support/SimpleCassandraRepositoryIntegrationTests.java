@@ -94,7 +94,10 @@ public class SimpleCassandraRepositoryIntegrationTests extends IntegrationTestsS
 	private ClassLoader classLoader;
 	private UserRepostitory repository;
 
-	private User dave, oliver, carter, boyd;
+	private User dave;
+	private User oliver;
+	private User carter;
+	private User boyd;
 
 	@Override
 	public void setBeanClassLoader(ClassLoader classLoader) {
@@ -158,33 +161,33 @@ public class SimpleCassandraRepositoryIntegrationTests extends IntegrationTestsS
 	@Test // DATACASS-396
 	void findByIdShouldReturnObject() {
 
-		Optional<User> User = repository.findById(dave.getId());
+		Optional<User> user = repository.findById(dave.getId());
 
-		assertThat(User).contains(dave);
+		assertThat(user).contains(dave);
 	}
 
 	@Test // DATACASS-396
 	void findByIdShouldCompleteWithoutValueForAbsentObject() {
 
-		Optional<User> User = repository.findById("unknown");
+		Optional<User> user = repository.findById("unknown");
 
-		assertThat(User).isEmpty();
+		assertThat(user).isEmpty();
 	}
 
 	@Test // DATACASS-396, DATACASS-416
 	void findAllShouldReturnAllResults() {
 
-		List<User> Users = repository.findAll();
+		List<User> users = repository.findAll();
 
-		assertThat(Users).hasSize(4);
+		assertThat(users).hasSize(4);
 	}
 
 	@Test // DATACASS-396, DATACASS-416
 	void findAllByIterableOfIdShouldReturnResults() {
 
-		List<User> Users = repository.findAllById(Arrays.asList(dave.getId(), boyd.getId()));
+		List<User> users = repository.findAllById(Arrays.asList(dave.getId(), boyd.getId()));
 
-		assertThat(Users).hasSize(2);
+		assertThat(users).hasSize(2);
 	}
 
 	@Test // DATACASS-56
@@ -242,9 +245,9 @@ public class SimpleCassandraRepositoryIntegrationTests extends IntegrationTestsS
 
 		repository.deleteAll();
 
-		User User = new User("36", "Homer", "Simpson");
+		User user = new User("36", "Homer", "Simpson");
 
-		repository.insert(User);
+		repository.insert(user);
 
 		assertThat(repository.count()).isEqualTo(1);
 	}
@@ -294,15 +297,15 @@ public class SimpleCassandraRepositoryIntegrationTests extends IntegrationTestsS
 	@Test // DATACASS-396
 	void saveEntityShouldInsertNewEntity() {
 
-		User User = new User("36", "Homer", "Simpson");
+		User user = new User("36", "Homer", "Simpson");
 
-		User saved = repository.save(User);
+		User saved = repository.save(user);
 
-		assertThat(saved).isEqualTo(User);
+		assertThat(saved).isEqualTo(user);
 
-		Optional<User> loaded = repository.findById(User.getId());
+		Optional<User> loaded = repository.findById(user.getId());
 
-		assertThat(loaded).contains(User);
+		assertThat(loaded).contains(user);
 	}
 
 	@Test // DATACASS-396, DATACASS-416, DATACASS-573
@@ -320,20 +323,20 @@ public class SimpleCassandraRepositoryIntegrationTests extends IntegrationTestsS
 	@Test // DATACASS-396, DATACASS-416
 	void saveIterableOfMixedEntitiesShouldInsertEntity() {
 
-		User User = new User("36", "Homer", "Simpson");
+		User user = new User("36", "Homer", "Simpson");
 
 		dave.setFirstname("Hello, Dave");
 		dave.setLastname("Bowman");
 
-		List<User> saved = repository.saveAll(Arrays.asList(User, dave));
+		List<User> saved = repository.saveAll(Arrays.asList(user, dave));
 
 		assertThat(saved).hasSize(2);
 
 		Optional<User> persistentDave = repository.findById(dave.getId());
 		assertThat(persistentDave).contains(dave);
 
-		Optional<User> persistentHomer = repository.findById(User.getId());
-		assertThat(persistentHomer).contains(User);
+		Optional<User> persistentHomer = repository.findById(user.getId());
+		assertThat(persistentHomer).contains(user);
 	}
 
 	@Test // DATACASS-396, DATACASS-416

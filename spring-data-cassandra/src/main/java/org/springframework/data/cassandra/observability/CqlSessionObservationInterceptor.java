@@ -66,20 +66,20 @@ final class CqlSessionObservationInterceptor implements MethodInterceptor {
 		Method method = invocation.getMethod();
 		Object[] args = invocation.getArguments();
 
-		if (method.getName().equals("getTargetClass")) {
+		if ("getTargetClass".equals(method.getName())) {
 			return delegate.getClass();
 		}
 
-		if (method.getName().equals("execute") && args.length > 0) {
+		if ("execute".equals(method.getName()) && args.length > 0) {
 			return observe(createStatement(args), method.getName(), this.delegate::execute);
 		}
 
-		if (method.getName().equals("executeAsync") && args.length > 0) {
+		if ("executeAsync".equals(method.getName()) && args.length > 0) {
 			return observe(createStatement(args), method.getName(), this.delegate::executeAsync);
 		}
 
 		// prepare calls do not notify RequestTracker so we need to stop the observation ourselves
-		if (method.getName().equals("prepare") && args.length > 0) {
+		if ("prepare".equals(method.getName()) && args.length > 0) {
 
 			Statement<?> statement = createStatement(args);
 
@@ -100,7 +100,7 @@ final class CqlSessionObservationInterceptor implements MethodInterceptor {
 			}
 		}
 
-		if (method.getName().equals("prepareAsync") && args.length > 0) {
+		if ("prepareAsync".equals(method.getName()) && args.length > 0) {
 
 			Statement<?> statement = createStatement(args);
 

@@ -37,7 +37,7 @@ import org.springframework.util.Assert;
 @SuppressWarnings("unused")
 public class CassandraConnectionProperties extends Properties {
 
-	private final static List<WeakReference<CassandraConnectionProperties>> instances = new ArrayList<>();
+	private static final List<WeakReference<CassandraConnectionProperties>> instances = new ArrayList<>();
 
 	private final String resourceName;
 

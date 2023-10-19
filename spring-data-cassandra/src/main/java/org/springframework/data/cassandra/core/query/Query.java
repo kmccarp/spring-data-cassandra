@@ -44,7 +44,7 @@ import org.springframework.util.Assert;
  * @see org.springframework.data.domain.Sort
  * @since 2.0
  */
-public class Query implements Filter {
+public final class Query implements Filter {
 
 	private static final Query EMPTY = new Query(Collections.emptyList(), Columns.empty(), Sort.unsorted(),
 			CassandraScrollPosition.initial(), Optional.empty(), Limit.unlimited(), false);
@@ -386,7 +386,7 @@ public class Query implements Filter {
 		result += 31 * nullSafeHashCode(scrollPosition);
 		result += 31 * nullSafeHashCode(queryOptions);
 		result += 31 * nullSafeHashCode(limit);
-		result += (allowFiltering ? 0 : 1);
+		result += allowFiltering ? 0 : 1;
 		return result;
 	}
 

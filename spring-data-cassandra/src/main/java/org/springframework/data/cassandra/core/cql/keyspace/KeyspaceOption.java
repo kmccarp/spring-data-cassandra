@@ -25,7 +25,7 @@ public enum KeyspaceOption implements Option {
 
 	DURABLE_WRITES("durable_writes", Boolean.class, false, false, false);
 
-	private Option delegate;
+	private final Option delegate;
 
 	KeyspaceOption(String name, Class<?> type, boolean requiresValue, boolean escapesValue, boolean quotesValue) {
 		this.delegate = new DefaultOption(name, type, requiresValue, escapesValue, quotesValue);

@@ -80,7 +80,7 @@ public enum TableOption implements Option {
 	 */
 	GC_GRACE_SECONDS("gc_grace_seconds", Long.class, true, false, false);
 
-	private Option delegate;
+	private final Option delegate;
 
 	TableOption(String name, Class<?> type, boolean requiresValue, boolean escapesValue, boolean quotesValue) {
 		this.delegate = new DefaultOption(name, type, requiresValue, escapesValue, quotesValue);

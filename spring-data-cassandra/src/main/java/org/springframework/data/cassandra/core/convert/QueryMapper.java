@@ -257,7 +257,7 @@ public class QueryMapper {
 			Field field = createPropertyField(entity, column);
 			field.getProperty().ifPresent(seen::add);
 
-			columns.getSelector(column).filter(selector -> selector instanceof ColumnSelector)
+			columns.getSelector(column).filter(Columns.ColumnSelector.class::isInstance)
 					.ifPresent(columnSelector -> columnNames.addAll(getCqlIdentifier(column, field)));
 		}
 

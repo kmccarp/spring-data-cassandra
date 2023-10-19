@@ -919,10 +919,12 @@ class CassandraTemplateIntegrationTests extends AbstractKeyspaceCreatingIntegrat
 
 		@Override
 		public boolean equals(Object o) {
-			if (this == o)
+			if (this == o) {
 				return true;
-			if (o == null || getClass() != o.getClass())
+			}
+			if (o == null || getClass() != o.getClass()) {
 				return false;
+			}
 
 			WithNullableEmbeddedType that = (WithNullableEmbeddedType) o;
 
@@ -966,10 +968,12 @@ class CassandraTemplateIntegrationTests extends AbstractKeyspaceCreatingIntegrat
 
 		@Override
 		public boolean equals(Object o) {
-			if (this == o)
+			if (this == o) {
 				return true;
-			if (o == null || getClass() != o.getClass())
+			}
+			if (o == null || getClass() != o.getClass()) {
 				return false;
+			}
 
 			WithPrefixedNullableEmbeddedType that = (WithPrefixedNullableEmbeddedType) o;
 
@@ -1037,10 +1041,12 @@ class CassandraTemplateIntegrationTests extends AbstractKeyspaceCreatingIntegrat
 
 		@Override
 		public boolean equals(Object o) {
-			if (this == o)
+			if (this == o) {
 				return true;
-			if (o == null || getClass() != o.getClass())
+			}
+			if (o == null || getClass() != o.getClass()) {
 				return false;
+			}
 
 			EmbeddedWithSimpleTypes that = (EmbeddedWithSimpleTypes) o;
 
@@ -1084,10 +1090,12 @@ class CassandraTemplateIntegrationTests extends AbstractKeyspaceCreatingIntegrat
 
 		@Override
 		public boolean equals(Object o) {
-			if (this == o)
+			if (this == o) {
 				return true;
-			if (o == null || getClass() != o.getClass())
+			}
+			if (o == null || getClass() != o.getClass()) {
 				return false;
+			}
 
 			OuterWithNullableEmbeddedType that = (OuterWithNullableEmbeddedType) o;
 
@@ -1113,10 +1121,12 @@ class CassandraTemplateIntegrationTests extends AbstractKeyspaceCreatingIntegrat
 
 		@Override
 		public boolean equals(Object o) {
-			if (this == o)
+			if (this == o) {
 				return true;
-			if (o == null || getClass() != o.getClass())
+			}
+			if (o == null || getClass() != o.getClass()) {
 				return false;
+			}
 
 			OuterWithPrefixedNullableEmbeddedType that = (OuterWithPrefixedNullableEmbeddedType) o;
 
@@ -1161,10 +1171,12 @@ class CassandraTemplateIntegrationTests extends AbstractKeyspaceCreatingIntegrat
 
 		@Override
 		public boolean equals(Object o) {
-			if (this == o)
+			if (this == o) {
 				return true;
-			if (o == null || getClass() != o.getClass())
+			}
+			if (o == null || getClass() != o.getClass()) {
 				return false;
+			}
 
 			UDTWithNullableEmbeddedType that = (UDTWithNullableEmbeddedType) o;
 
@@ -1209,10 +1221,12 @@ class CassandraTemplateIntegrationTests extends AbstractKeyspaceCreatingIntegrat
 
 		@Override
 		public boolean equals(Object o) {
-			if (this == o)
+			if (this == o) {
 				return true;
-			if (o == null || getClass() != o.getClass())
+			}
+			if (o == null || getClass() != o.getClass()) {
 				return false;
+			}
 
 			UDTWithPrefixedNullableEmbeddedType that = (UDTWithPrefixedNullableEmbeddedType) o;
 

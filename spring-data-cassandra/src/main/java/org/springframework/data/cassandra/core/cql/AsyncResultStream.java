@@ -34,7 +34,7 @@ import com.datastax.oss.driver.api.core.cql.Row;
  * @author Mark Paluch
  * @since 3.0
  */
-class AsyncResultStream<T> {
+final class AsyncResultStream<T> {
 
 	private final AsyncResultSet resultSet;
 

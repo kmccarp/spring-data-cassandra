@@ -61,7 +61,7 @@ public class CreateKeyspaceCqlGeneratorUnitTests {
 	 * Convenient base class that other test classes can use so as not to repeat the generics declarations or
 	 * {@link #generator()} method.
 	 */
-	public static abstract class CreateKeyspaceTest
+	public abstract static class CreateKeyspaceTest
 			extends AbstractKeyspaceOperationCqlGeneratorTest<CreateKeyspaceSpecification, CreateKeyspaceCqlGenerator> {
 
 		@Override

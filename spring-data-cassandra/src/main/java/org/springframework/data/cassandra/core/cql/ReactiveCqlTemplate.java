@@ -512,9 +512,9 @@ public class ReactiveCqlTemplate extends ReactiveCassandraAccessor implements Re
 				logger.debug(String.format("Executing prepared statement [%s]", toCql(preparedStatement)));
 			}
 
-			BoundStatement boundStatement = (preparedStatementBinder != null
+			BoundStatement boundStatement = preparedStatementBinder != null
 					? preparedStatementBinder.bindValues(preparedStatement)
-					: preparedStatement.bind());
+					: preparedStatement.bind();
 
 			return session.execute(applyStatementSettings(boundStatement));
 		}).flatMap(rse::extractData)).onErrorMap(translateException("Query", () -> toCql(psc)));

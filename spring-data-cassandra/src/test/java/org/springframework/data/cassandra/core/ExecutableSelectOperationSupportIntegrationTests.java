@@ -294,7 +294,7 @@ class ExecutableSelectOperationSupportIntegrationTests extends AbstractKeyspaceC
 
 	@Test // DATACASS-485
 	void returnsTargetObjectDirectlyIfProjectionInterfaceIsImplemented() {
-		assertThat(this.template.query(Person.class).as(Contact.class).all()).allMatch(it -> it instanceof Person);
+		assertThat(this.template.query(Person.class).as(Contact.class).all()).allMatch(ExecutableSelectOperationSupportIntegrationTests.Person.class::isInstance);
 	}
 
 	private static Query queryLuke() {
@@ -341,10 +341,12 @@ class ExecutableSelectOperationSupportIntegrationTests extends AbstractKeyspaceC
 
 		@Override
 		public boolean equals(Object o) {
-			if (this == o)
+			if (this == o) {
 				return true;
-			if (o == null || getClass() != o.getClass())
+			}
+			if (o == null || getClass() != o.getClass()) {
 				return false;
+			}
 
 			Person person = (Person) o;
 

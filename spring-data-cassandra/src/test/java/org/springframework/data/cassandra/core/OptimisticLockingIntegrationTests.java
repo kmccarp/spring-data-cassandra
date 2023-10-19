@@ -124,7 +124,7 @@ class OptimisticLockingIntegrationTests extends AbstractKeyspaceCreatingIntegrat
 		assertThat(loaded).isNotNull();
 	}
 
-	static class VersionedEntity {
+	static final class VersionedEntity {
 
 		@Id final long id;
 

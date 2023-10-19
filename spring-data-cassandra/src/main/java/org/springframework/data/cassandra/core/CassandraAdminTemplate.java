@@ -165,20 +165,13 @@ public class CassandraAdminTemplate extends CassandraTemplate implements Cassand
 		Assert.notNull(tableName, "Table name must not be null");
 
 		// noinspection ConstantConditions
-		return getCqlOperations().execute((SessionCallback<Optional<TableMetadata>>) session -> {
-			return session.getMetadata().getKeyspace(keyspace).flatMap(it -> it.getTable(tableName));
-		});
+		return getCqlOperations().execute((SessionCallback<Optional<TableMetadata>>) session -> session.getMetadata().getKeyspace(keyspace).flatMap(it -> it.getTable(tableName)));
 	}
 
 	@Override
 	public KeyspaceMetadata getKeyspaceMetadata() {
 
 		// noinspection ConstantConditions
-		return getCqlOperations().execute((SessionCallback<KeyspaceMetadata>) session -> {
-
-			return session.getKeyspace().flatMap(it -> session.getMetadata().getKeyspace(it)).orElseThrow(() -> {
-				return new IllegalStateException("Metadata for keyspace not available");
-			});
-		});
+		return getCqlOperations().execute((SessionCallback<KeyspaceMetadata>) session -> session.getKeyspace().flatMap(it -> session.getMetadata().getKeyspace(it)).orElseThrow(() -> new IllegalStateException("Metadata for keyspace not available")));
 	}
 }

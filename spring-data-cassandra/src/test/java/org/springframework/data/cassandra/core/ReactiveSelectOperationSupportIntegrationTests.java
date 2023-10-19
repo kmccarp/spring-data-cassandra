@@ -288,7 +288,7 @@ class ReactiveSelectOperationSupportIntegrationTests extends AbstractKeyspaceCre
 		Flux<Contact> result = this.template.query(Person.class).as(Contact.class).all();
 
 		result.collectList().as(StepVerifier::create)
-				.assertNext(actual -> assertThat(actual).allMatch(it -> it instanceof Person)).verifyComplete();
+				.assertNext(actual -> assertThat(actual).allMatch(ReactiveSelectOperationSupportIntegrationTests.Person.class::isInstance)).verifyComplete();
 	}
 
 	private static Query queryLuke() {
@@ -335,10 +335,12 @@ class ReactiveSelectOperationSupportIntegrationTests extends AbstractKeyspaceCre
 
 		@Override
 		public boolean equals(Object o) {
-			if (this == o)
+			if (this == o) {
 				return true;
-			if (o == null || getClass() != o.getClass())
+			}
+			if (o == null || getClass() != o.getClass()) {
 				return false;
+			}
 
 			Person person = (Person) o;
 

@@ -81,11 +81,11 @@ final class ObservationStatement implements MethodInterceptor {
 
 		Method method = invocation.getMethod();
 
-		if (method.getName().equals("getTargetClass")) {
+		if ("getTargetClass".equals(method.getName())) {
 			return this.delegate.getClass();
 		}
 
-		if (method.getName().equals("getObservation")) {
+		if ("getObservation".equals(method.getName())) {
 			return this.observation;
 		}
 

@@ -38,7 +38,7 @@ import org.springframework.util.Assert;
  * @author Mark Paluch
  * @since 2.0
  */
-public class CassandraPageRequest extends PageRequest {
+public final class CassandraPageRequest extends PageRequest {
 
 	private final CassandraScrollPosition scrollPosition;
 
@@ -197,7 +197,7 @@ public class CassandraPageRequest extends PageRequest {
 	 * @return {@literal true } if there's a next {@link Pageable} we can access from the current one.
 	 */
 	public boolean hasNext() {
-		return (getPagingState() != null && this.nextAllowed);
+		return getPagingState() != null && this.nextAllowed;
 	}
 
 	@Override

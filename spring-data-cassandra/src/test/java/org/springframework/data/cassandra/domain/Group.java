@@ -65,15 +65,18 @@ public class Group {
 
 	@Override
 	public boolean equals(Object o) {
-		if (this == o)
+		if (this == o) {
 			return true;
-		if (o == null || getClass() != o.getClass())
+		}
+		if (o == null || getClass() != o.getClass()) {
 			return false;
+		}
 
 		Group group = (Group) o;
 
-		if (age != group.age)
+		if (age != group.age) {
 			return false;
+		}
 		if (!ObjectUtils.nullSafeEquals(id, group.id)) {
 			return false;
 		}

@@ -56,7 +56,7 @@ public class SessionFactoryFactoryBean extends AbstractFactoryBean<SessionFactor
 
 	private SchemaAction schemaAction = SchemaAction.NONE;
 
-	private boolean suspendLifecycleSchemaRefresh = false;
+	private boolean suspendLifecycleSchemaRefresh;
 
 	/**
 	 * Set the {@link CassandraConverter} to use. Schema actions will derive table and user type information from the
@@ -201,12 +201,16 @@ public class SessionFactoryFactoryBean extends AbstractFactoryBean<SessionFactor
 		switch (this.schemaAction) {
 			case RECREATE_DROP_UNUSED:
 				dropUnused = true;
+				break;
 			case RECREATE:
 				drop = true;
+				break;
 			case CREATE_IF_NOT_EXISTS:
 				ifNotExists = SchemaAction.CREATE_IF_NOT_EXISTS.equals(this.schemaAction);
+				break;
 			case CREATE:
 				create = true;
+				break;
 			case NONE:
 			default:
 				// do nothing

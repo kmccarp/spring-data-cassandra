@@ -69,7 +69,7 @@ class IntParamIntegrationTests extends AbstractSpringDataEmbeddedCassandraIntegr
 		IntThing found = repo.findThingByIntPrimitive(number);
 		assertThat(found).isNotNull();
 
-		found = repo.findThingByIntReference(new Integer(number));
+		found = repo.findThingByIntReference(Integer.valueOf(number));
 		assertThat(found).isNotNull();
 	}
 

@@ -639,7 +639,7 @@ public class AsyncCqlTemplate extends CassandraAccessor implements AsyncCqlOpera
 		return translated == null ? e : translated;
 	}
 
-	private static class SimpleAsyncPreparedStatementCreator implements AsyncPreparedStatementCreator, CqlProvider {
+	private static final class SimpleAsyncPreparedStatementCreator implements AsyncPreparedStatementCreator, CqlProvider {
 
 		private final PersistenceExceptionTranslator exceptionTranslator;
 

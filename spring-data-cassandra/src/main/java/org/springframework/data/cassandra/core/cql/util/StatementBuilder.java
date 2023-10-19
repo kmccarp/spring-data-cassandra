@@ -69,7 +69,7 @@ import com.datastax.oss.driver.internal.querybuilder.CqlHelper;
  * @param <S> Statement type
  * @since 3.0
  */
-public class StatementBuilder<S extends BuildableQuery> {
+public final class StatementBuilder<S extends BuildableQuery> {
 
 	private final S statement;
 

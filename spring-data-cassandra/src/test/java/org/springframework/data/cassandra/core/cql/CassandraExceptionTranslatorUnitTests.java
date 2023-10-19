@@ -53,10 +53,10 @@ import com.datastax.oss.driver.internal.core.metadata.DefaultEndPoint;
  */
 class CassandraExceptionTranslatorUnitTests {
 
-	private InetSocketAddress socketAddress = new InetSocketAddress("localhost", 42);
-	private EndPoint endPoint = new DefaultEndPoint(socketAddress);
-	private Node node = mock(Node.class);
-	private CassandraExceptionTranslator sut = new CassandraExceptionTranslator();
+	private final InetSocketAddress socketAddress = new InetSocketAddress("localhost", 42);
+	private final EndPoint endPoint = new DefaultEndPoint(socketAddress);
+	private final Node node = mock(Node.class);
+	private final CassandraExceptionTranslator sut = new CassandraExceptionTranslator();
 
 	@Test // DATACASS-402
 	void shouldTranslateAuthenticationException() {

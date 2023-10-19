@@ -541,13 +541,13 @@ public class SchemaFactoryUnitTests {
 	void columnsShouldMapToTuple() {
 
 		UserDefinedType mappedUdt = mock(UserDefinedType.class, "mappedudt");
-		UserDefinedType human_udt = mock(UserDefinedType.class, "human_udt");
+		UserDefinedType humanUdt = mock(UserDefinedType.class, "human_udt");
 
-		when(human_udt.copy(true)).thenReturn(human_udt);
+		when(humanUdt.copy(true)).thenReturn(humanUdt);
 		when(mappedUdt.copy(true)).thenReturn(mappedUdt);
 
 		when(mappedUdt.asCql(anyBoolean(), anyBoolean())).thenReturn("mappedudt");
-		when(human_udt.asCql(anyBoolean(), anyBoolean())).thenReturn("human_udt");
+		when(humanUdt.asCql(anyBoolean(), anyBoolean())).thenReturn("human_udt");
 
 		mappingContext.setUserTypeResolver(typeName -> {
 
@@ -555,8 +555,8 @@ public class SchemaFactoryUnitTests {
 				return mappedUdt;
 			}
 
-			if (typeName.toString().equals(human_udt.toString())) {
-				return human_udt;
+			if (typeName.toString().equals(humanUdt.toString())) {
+				return humanUdt;
 			}
 			return null;
 		});

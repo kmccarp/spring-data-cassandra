@@ -65,7 +65,7 @@ import com.datastax.oss.driver.api.core.type.TupleType;
 public class CassandraTypeMappingIntegrationTests extends AbstractKeyspaceCreatingIntegrationTests {
 
 	private static final Version VERSION_3_10 = Version.parse("3.10");
-	private static boolean initialized = false;
+	private static boolean initialized;
 
 	private CassandraOperations operations;
 	private Version cassandraVersion;
